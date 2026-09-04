@@ -3,50 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ザオウリカー 集客・ブランド認知 総合分析レポート</title>
+    <title>ザオウリカー SEO・AIO分析 / 競合分析レポート</title>
     <meta
       name="description"
-      content="ザオウリカーのSEO・MEO・LLMO・LINE導線・高単価案件獲得戦略を、スライド形式で整理したクライアント向けレポート。"
+      content="ザオウリカーのSEO内部施策と競合分析を、AIO視点まで含めて整理したクライアント向けスライドレポート。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./client-report.css" />
   </head>
-  <body>
+  <body class="is-locked">
+    <section class="access-gate" id="access-gate" aria-labelledby="access-gate-title">
+      <form class="access-gate__panel" id="access-gate-form">
+        <p class="eyebrow">Client Report</p>
+        <h1 id="access-gate-title">閲覧パスワード</h1>
+        <p>本レポートは関係者向けの資料です。パスワードを入力して閲覧してください。</p>
+        <label for="access-password">パスワード</label>
+        <input id="access-password" name="password" type="password" autocomplete="current-password" required autofocus />
+        <p class="access-gate__error" id="access-gate-error" role="alert" hidden>パスワードが正しくありません。</p>
+        <button type="submit">レポートを開く</button>
+      </form>
+    </section>
     <div class="app-shell">
       <aside class="rail" aria-label="スライド一覧">
         <div class="rail__inner">
-          <p class="rail__eyebrow">Client Report</p>
-          <h1 class="rail__title">ザオウリカー<br />集客分析レポート</h1>
-          <p class="rail__subtitle">SEO / MEO / LLMO / LINE導線 / 高単価案件戦略</p>
+          <p class="rail__eyebrow">SEO / AIO / Competitive Analysis</p>
+          <h1 class="rail__title">ザオウリカー<br />SEO・AIO / 競合分析</h1>
+          <p class="rail__subtitle">検索流入を「専門性」と「買取実績」の資産に変える再構築提案</p>
 
           <nav class="toc">
             <a class="toc__link" href="#slide-1">1 表紙</a>
-            <a class="toc__link" href="#slide-2">2 目次</a>
-            <a class="toc__link" href="#slide-3">3 エグゼクティブサマリー</a>
-            <a class="toc__link" href="#slide-4">4 第1章 ニーズ分析</a>
-            <a class="toc__link" href="#slide-5">5 全体診断</a>
-            <a class="toc__link" href="#slide-6">6 重点テーマ</a>
-            <a class="toc__link" href="#slide-7">7 第2章 自社分析</a>
-            <a class="toc__link" href="#slide-8">8 自社分析まとめ</a>
-            <a class="toc__link" href="#slide-9">9 Googleアナリティクス分析</a>
-            <a class="toc__link" href="#slide-10">10 Search Console分析</a>
-            <a class="toc__link" href="#slide-11">11 MEO分析</a>
-            <a class="toc__link" href="#slide-12">12 内部施策分析</a>
-            <a class="toc__link" href="#slide-13">13 第3章 競合分析</a>
-            <a class="toc__link" href="#slide-14">14 競合分析まとめ</a>
-            <a class="toc__link" href="#slide-15">15 Five Needs分析</a>
-            <a class="toc__link" href="#slide-16">16 JOYLAB分析</a>
-            <a class="toc__link" href="#slide-17">17 福ちゃん分析</a>
-            <a class="toc__link" href="#slide-18">18 大黒屋分析</a>
-            <a class="toc__link" href="#slide-19">19 4サイト比較</a>
-            <a class="toc__link" href="#slide-20">20 第4章 施策提案</a>
-            <a class="toc__link" href="#slide-21">21 優先施策</a>
-            <a class="toc__link" href="#slide-22">22 実行計画</a>
+            <a class="toc__link" href="#slide-contents">2 目次</a>
+            <a class="toc__link" href="#slide-summary">3 エグゼクティブサマリー</a>
+            <a class="toc__link" href="#slide-2">4 エグゼクティブサマリー</a>
+            <a class="toc__link" href="#slide-self-analysis">5 自社分析</a>
+            <a class="toc__link" href="#slide-3">6 自社分析の区分</a>
+            <a class="toc__link" href="#slide-4">7 自社の現状整理</a>
+            <a class="toc__link" href="#slide-5">8 GA4分析（流入・CV）</a>
+            <a class="toc__link" href="#slide-6">9 Search Console分析</a>
+            <a class="toc__link" href="#slide-7">10 Googleビジネスプロフィール分析（GBP）</a>
+            <a class="toc__link" href="#slide-8">11 Webサイト分析</a>
+            <a class="toc__link" href="#slide-9">12 自社の課題</a>
+            <a class="toc__link" href="#slide-competitor-analysis">13 競合分析</a>
+            <a class="toc__link" href="#slide-10">14 競合比較の見取り図</a>
+            <a class="toc__link" href="#slide-seo-score">15 SEO内部施策 総合評価</a>
+            <a class="toc__link" href="#slide-aio-score">16 AIO引用可能性 総合評価</a>
+            <a class="toc__link" href="#slide-aio-item-score">17 AIO評価項目別スコア</a>
+            <a class="toc__link" href="#slide-11">18 競合サイトのSEO構造</a>
+            <a class="toc__link" href="#slide-12">19 お酒買取ページ比較</a>
+            <a class="toc__link" href="#slide-category-seo-gap">20 カテゴリページのSEOギャップ</a>
+            <a class="toc__link" href="#slide-brand-seo-gap">21 銘柄SEOのギャップ</a>
+            <a class="toc__link" href="#slide-13">22 ブランド・銘柄比較</a>
+            <a class="toc__link" href="#slide-14">23 価格・相場比較</a>
+            <a class="toc__link" href="#slide-15">24 買取実績比較</a>
+            <a class="toc__link" href="#slide-16">25 FAQ・コラム比較</a>
+            <a class="toc__link" href="#slide-action-plan">26 対策プランのご提案</a>
+            <a class="toc__link" href="#slide-seo-aio-strategy-map">27 SEO・AIO戦略マップ</a>
+            <a class="toc__link" href="#slide-evidence-plan">28〜33 対策詳細</a>
+            <a class="toc__link" href="#slide-keyword-strategy">34〜36 キーワード・記事・ブランド設計</a>
+            <a class="toc__link" href="#slide-17">37 推奨サイト構造</a>
+            <a class="toc__link" href="#slide-18">38 ロードマップ</a>
+            <a class="toc__link" href="#slide-19">39 ページ制作数目安</a>
+            <a class="toc__link" href="#slide-20">40 施策優先順位</a>
+            <a class="toc__link" href="#slide-21">41 SEOからAIOへ</a>
+            <a class="toc__link" href="#slide-22">42 まとめ</a>
           </nav>
         </div>
       </aside>
@@ -55,55 +79,62 @@
         <header class="topbar">
           <div>
             <p class="topbar__eyebrow">SLIDE REPORT</p>
-            <p class="topbar__title">ザオウリカー 集客・ブランド認知 総合分析</p>
+            <p class="topbar__title">ザオウリカー SEO・AIO分析 / 競合分析レポート</p>
           </div>
           <div class="topbar__actions">
-            <p class="topbar__counter" id="slide-counter">1 / 22</p>
+            <p class="topbar__counter" id="slide-counter">1 / 42</p>
             <button class="action-button" type="button" data-action="print">印刷 / PDF</button>
           </div>
         </header>
+
+        <nav class="slide-navigation" aria-label="スライド操作">
+          <button class="slide-navigation__button" type="button" data-action="previous">前へ</button>
+          <button class="slide-navigation__button slide-navigation__button--next" type="button" data-action="next">次へ</button>
+        </nav>
 
         <main class="deck" id="deck">
           <section class="slide slide--cover" id="slide-1" data-title="表紙">
             <div class="slide__frame">
               <div class="slide__tag">AUG 2026</div>
               <div class="cover-simple">
-                <p class="eyebrow">CLIENT REPORT</p>
-                <h2 class="title title--hero">ザオウリカー<br />集客・ブランド認知 総合分析レポート</h2>
+                <p class="lead">株式会社蔵王御中</p>
+                <h2 class="title title--hero">SEO・AIO分析 / 競合分析レポート</h2>
+                <p class="lead">ザオウリカー｜theou-liquor.com</p>
+                <p class="lead">比較対象: ファイブニーズ / JOYLAB / 大黒屋</p>
+                <p class="lead">調査: 2026年8月</p>
               </div>
               <div class="slide__number">1</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-2" data-title="目次">
+          <section class="slide" id="slide-contents" data-title="目次">
             <div class="slide__frame">
-              <div class="side-pill">目次</div>
+              <div class="side-pill">Contents</div>
               <div class="slide__main">
                 <div class="slide__header">
                   <p class="eyebrow">Contents</p>
-                  <h2 class="title">本レポートの構成</h2>
+                  <h2 class="title">本資料の<span class="accent">構成</span></h2>
                 </div>
-
                 <div class="toc-slide-grid">
                   <article class="toc-slide-card">
-                    <span>第1章</span>
-                    <h3>ニーズ分析</h3>
-                    <p>全体診断と重点テーマから、狙うべき需要を整理します。</p>
+                    <span>01</span>
+                    <h3>エグゼクティブサマリー</h3>
+                    <p>全体の結論と、取り組むべき方向性を先に整理する。</p>
                   </article>
                   <article class="toc-slide-card">
-                    <span>第2章</span>
+                    <span>02</span>
                     <h3>自社分析</h3>
-                    <p>GA4、Search Console、MEO、内部施策の観点で現状を診断します。</p>
+                    <p>GA4・Search Console・GBP・Webサイトから現状を把握する。</p>
                   </article>
                   <article class="toc-slide-card">
-                    <span>第3章</span>
+                    <span>03</span>
                     <h3>競合分析</h3>
-                    <p>4サイトの勝ち筋を比較し、差別化余地を明確にします。</p>
+                    <p>SEO・AIO・CV導線の観点から競合との差を確認する。</p>
                   </article>
                   <article class="toc-slide-card">
-                    <span>第4章</span>
-                    <h3>施策提案</h3>
-                    <p>短期優先施策と90日実行計画を整理します。</p>
+                    <span>04</span>
+                    <h3>対策プランの提案</h3>
+                    <p>優先施策、ページ設計、実行順序を提案する。</p>
                   </article>
                 </div>
               </div>
@@ -111,153 +142,238 @@
             </div>
           </section>
 
-          <section class="slide" id="slide-3" data-title="エグゼクティブサマリー">
+          <section class="slide" id="slide-summary" data-title="エグゼクティブサマリー">
             <div class="slide__frame">
-              <div class="side-pill">総括</div>
-              <div class="slide__main">
-                <div class="slide__header">
-                  <p class="eyebrow">Executive Summary</p>
-                  <h2 class="title">結論: 問い合わせ数の単純増ではなく、<span class="accent">高単価案件の獲得比率</span>を上げるべき</h2>
-                </div>
-
-                <div class="score-grid">
-                  <article class="score-card">
-                    <span>SEO</span>
-                    <strong>67</strong>
-                    <p>自然検索の基盤はあるが、高利益テーマに寄せた受け皿が不足。</p>
-                  </article>
-                  <article class="score-card">
-                    <span>MEO</span>
-                    <strong>58</strong>
-                    <p>来店需要は強いが、買取専門性の伝達に改善余地あり。</p>
-                  </article>
-                  <article class="score-card">
-                    <span>LLMO</span>
-                    <strong>41</strong>
-                    <p>AIが理解・比較しやすいFAQや専門性記述が不足。</p>
-                  </article>
-                  <article class="score-card">
-                    <span>CV計測</span>
-                    <strong>36</strong>
-                    <p>正式CV定義が弱く、どの流入が成果か判断しにくい。</p>
-                  </article>
-                </div>
-
-                <div class="split-panel split-panel--short">
-                  <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>結論</h3>
-                    <p>まずCV計測を整え、その次に高利益テーマの受け皿を作る順番が最も合理的です。</p>
-                  </article>
-                  <article class="split-panel__pane">
-                    <h3>優先テーマ</h3>
-                    <p>`大阪持ち込み` `高級ワイン` `ワインセラー` `法人案件` の4領域を先に取りにいきます。</p>
-                  </article>
-                </div>
+              <div class="chapter-intro">
+                <p class="chapter-intro__meta">Chapter 01</p>
+                <h2 class="chapter-intro__title">エグゼクティブサマリー</h2>
+                <p class="chapter-intro__lead">分析から見えた全体結論と、優先して取り組むべき方向性を整理する。</p>
               </div>
               <div class="slide__number">3</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-4" data-title="第1章 ニーズ分析">
+          <section class="slide" id="slide-2" data-title="エグゼクティブサマリー">
+            <div class="slide__frame">
+              <div class="side-pill">Summary</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">Executive Summary</p>
+                  <h2 class="title">結論: <span class="accent">WEBから個人・法人の新規買取需要を獲得</span>できる見込みはあります</h2>
+                </div>
+
+                <div class="split-panel">
+                  <article class="split-panel__pane split-panel__pane--accent">
+                    <h3>01 | 事業の方向性</h3>
+                    <p>法人・店舗の買取を事業の中心に置きながら、競合に流れている個人・その他の買取案件の獲得も強化していく方針です。</p>
+                  </article>
+                  <article class="split-panel__pane">
+                    <h3>02 | 現状の捉え方</h3>
+                    <p>自然検索やGBPの行動には、既存取引先や営業商談前の信頼確認が含まれる可能性があります。流入量だけで新規案件の獲得力を判断せず、案件種別まで計測する必要があります。</p>
+                  </article>
+                </div>
+
+                <div class="split-panel split-panel--short">
+                  <article class="split-panel__pane">
+                    <h3>03 | 獲得機会</h3>
+                    <p>「響30年 買取」「山崎55年 買取」などの高額銘柄関連は既に検索表示されています。参考価格、査定根拠、実績を整えることで、新規ユーザーの買取需要を獲得できる可能性があります。</p>
+                  </article>
+                  <article class="split-panel__pane split-panel__pane--accent">
+                    <h3>04 | 進める施策</h3>
+                    <p>古酒・レア酒の専門性を強みに、検索意図ごとの受け皿ページ、一次情報、査定導線を整備します。SEO・AIO・営業の各接点をつなぎ、相談から商談化までを一貫して支えます。</p>
+                  </article>
+                </div>
+              </div>
+              <div class="slide__number">2</div>
+            </div>
+          </section>
+
+          <section class="slide" id="slide-self-analysis" data-title="自社分析">
             <div class="slide__frame">
               <div class="chapter-intro">
-                <p class="chapter-intro__meta">Chapter 01</p>
-                <h2 class="chapter-intro__title">ニーズ分析</h2>
-                <p class="chapter-intro__lead">
-                  まずは、ザオウリカーがどの需要を取りにいくべきかを整理します。
-                  流入量ではなく、案件価値と勝ちやすさで優先順位を定義します。
+                <p class="chapter-intro__meta">Chapter 02</p>
+                <h2 class="chapter-intro__title">自社分析</h2>
+                <p class="chapter-intro__lead">流入・検索・ローカル接点・Webサイトの4つの観点から、現在の強みと課題を確認する。</p>
+              </div>
+              <div class="slide__number">5</div>
+            </div>
+          </section>
+
+          <section class="slide" id="slide-3" data-title="自社分析の区分">
+            <div class="slide__frame">
+              <div class="side-pill">Overview</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">Self Analysis Framework</p>
+                  <h2 class="title">自社分析：<span class="accent">GA4・GBP・Search Consoleほか</span></h2>
+                </div>
+
+                <div class="comparison-table">
+                  <div class="comparison-row comparison-row--head">
+                    <span>自社分析の区分</span>
+                    <span>何を確認するか</span>
+                    <span>何が分かるか</span>
+                    <span>今回の分析への反映</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>GA4分析</span>
+                    <span>流入経路 / 行動 / CV</span>
+                    <span>営業経由を含め、どの接点が商談につながるか</span>
+                    <span>流入比率・商談化・計測設計</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>Googleビジネスプロフィール分析（GBP）</span>
+                    <span>通話 / ルート / サイトクリック</span>
+                    <span>営業・来店前の信頼確認を含む地域接点</span>
+                    <span>店舗接点から法人相談・査定への導線</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>Search Console分析</span>
+                    <span>クエリ / 表示回数 / 順位</span>
+                    <span>狙うべき検索意図と順位ギャップ</span>
+                    <span>高額銘柄・買取系の優先テーマ</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>WEBサイト内部構造</span>
+                    <span>実績 / 専門性 / 内部リンク</span>
+                    <span>競合に対して勝てる一次情報</span>
+                    <span>強みと構造上の課題</span>
+                  </div>
+                </div>
+
+              </div>
+              <div class="slide__number">3</div>
+            </div>
+          </section>
+
+          <section class="slide" id="slide-4" data-title="自社の現状整理">
+            <div class="slide__frame">
+              <div class="side-pill">Current</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">Current State</p>
+                  <h2 class="title">法人・店舗を主軸に、<span class="accent">Webから個人の買取需要</span>を獲得する</h2>
+                </div>
+
+                <div class="score-grid">
+                  <article class="score-card">
+                    <span>事業の前提</span>
+                    <strong>法人・店舗が主軸</strong>
+                    <p>営業経由の法人・店舗案件を中心に、酒類の買取事業を展開している。</p>
+                  </article>
+                  <article class="score-card">
+                    <span>現在の課題</span>
+                    <strong>個人買取需要の流出</strong>
+                    <p>個人が酒の買取を検討する際、買取の専門性や対応範囲がWeb上で十分に伝わらず、比較検討時に競合へ流れている。</p>
+                  </article>
+                  <article class="score-card">
+                    <span>今後の方向性</span>
+                    <strong>Webからの新規獲得を強化</strong>
+                    <p>個人の買取検討者に、専門性・買取実績・査定の安心感が伝わる情報と導線を整える。</p>
+                  </article>
+                  <article class="score-card">
+                    <span>強化すべき案件</span>
+                    <strong>高額・大ロット買取</strong>
+                    <p>高級ワイン、ワインセラー、法人在庫、店舗整理など、高い商談価値を持つ案件を優先する。</p>
+                  </article>
+                </div>
+
+                <p class="callout">
+                  ヒアリングにて、`法人・店舗の買取事業を維持しつつ、競合に流れている個人・その他の買取案件を獲得したい` という意向を確認した。
                 </p>
               </div>
               <div class="slide__number">4</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-5" data-title="全体診断">
+          <section class="slide" id="slide-5" data-title="GA4分析">
             <div class="slide__frame">
-              <div class="side-pill">ニーズ分析</div>
+              <div class="side-pill">GA4</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Diagnosis</p>
-                  <h2 class="title">今の課題は、集客不足よりも<span class="accent">転換率と訴求の精度</span></h2>
+                  <p class="eyebrow">Traffic & Conversion</p>
+                  <h2 class="title">自然検索が<span class="accent">50%以上</span>ではあるが、既存の取引先需要の可能性が高い</h2>
+                  <p class="analysis-period">集計期間: 2026年1月1日〜7月14日</p>
+                </div>
+
+                <div class="score-grid">
+                  <article class="score-card">
+                    <span>自然検索</span>
+                    <strong>8,136</strong>
+                    <p>全15,041セッションの54.1%。BtoB営業の事前調査を含む最大接点。</p>
+                  </article>
+                  <article class="score-card">
+                    <span>自然検索の質</span>
+                    <strong>55.1%</strong>
+                    <p>エンゲージメント率。商談化との因果は現状の計測だけでは判定しない。</p>
+                  </article>
+                  <article class="score-card">
+                    <span>フォーム関連イベント</span>
+                    <strong>2,283</strong>
+                    <p>567ユーザーが発火。実問い合わせ完了とは別イベントとして扱う。</p>
+                  </article>
+                  <article class="score-card">
+                    <span>実CV（Excel集計）</span>
+                    <strong>8</strong>
+                    <p>問い合わせ完了5件、買取査定依頼完了3件。2026年1〜6月。</p>
+                  </article>
                 </div>
 
                 <div class="split-panel">
                   <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>本件の目的整理</h3>
-                    <p>
-                      幅広い一般語で総当たりするのではなく、高単価案件に近いテーマを優先し、
-                      検索、マップ、LINE、AI回答まで含めて「高額酒・まとめ売り・持ち込み相談に強い」印象を作ることが重要です。
-                    </p>
+                    <h3>流入コンテンツの示唆</h3>
+                    <p>トップページに加え、「山崎55年」「ヴィンテージマッカラン」など高額・希少ボトルの記事が流入を担う。営業先・法人担当者が専門性を確認する入口としても機能し得る。</p>
                   </article>
                   <article class="split-panel__pane">
-                    <h3>現状の最大課題</h3>
-                    <ul class="mini-list">
-                      <li>どの流入が正式な成果につながっているか、GA4上で十分に判定できない</li>
-                      <li>高級ワイン、ワインセラー、法人大量買取など高利益テーマの受け皿ページが少ない</li>
-                      <li>GBP上で買取専門店としての理解が弱く、販売店寄り検索も混在している</li>
-                    </ul>
+                    <h3>次に整えるべきこと</h3>
+                    <p>`form_submit` と実問い合わせ完了を分け、電話・LINE・フォーム完了を共通のCV一覧で月次集計する。加えて「法人 / 個人」「営業起点 / 検索起点」「大ロット / 通常」を営業側で記録する。</p>
                   </article>
                 </div>
 
-                <div class="flow">
-                  <article class="flow-step">
-                    <h3>現状</h3>
-                    <p>流入はあるが、成果の見え方が弱い</p>
-                  </article>
-                  <article class="flow-step flow-step--accent">
-                    <h3>必要施策</h3>
-                    <p>計測、LP、GBP、LINEを連動させる</p>
-                  </article>
-                  <article class="flow-step">
-                    <h3>目指す状態</h3>
-                    <p>高単価案件が選ばれやすい集客構造</p>
-                  </article>
-                </div>
+                <p class="callout">So What: KPIは問い合わせ件数だけではなく、`法人・大ロット・高額案件の商談数 / 成約額` で置く。営業起点の案件もCRMで記録し、自然検索を過小・過大評価しない。<br />出典: GA4（2026年1月1日〜7月14日）、ザオウリカー買取アナリティクス（2026年1〜6月）、打ち合わせ議事録</p>
               </div>
               <div class="slide__number">5</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-6" data-title="重点テーマ">
+          <section class="slide" id="slide-6" data-title="Search Console分析（上位順位・検索意図）">
             <div class="slide__frame">
-              <div class="side-pill">ニーズ分析</div>
+              <div class="side-pill">GSC</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Focus Themes</p>
-                  <h2 class="title">優先すべきテーマは、<span class="accent">検索ボリュームより案件価値</span></h2>
+                  <p class="eyebrow">Search Ranking & Intent</p>
+                  <h2 class="title">新規の<span class="accent">買取需要を獲得できる可能性</span>は十分に見込める</h2>
+                  <p class="analysis-period">集計期間: 2025年1月1日〜2026年7月31日</p>
                 </div>
 
-                <div class="theme-grid">
-                  <article class="theme-card">
-                    <h3>大阪 持ち込み買取</h3>
-                    <p>来店意欲の高い顕在層を取り込みやすい。</p>
-                    <span>GBP / 検索 / LINE</span>
+                <div class="score-grid">
+                  <article class="score-card">
+                    <span>指名検索: 蔵王リカー</span>
+                    <strong>5.7位</strong>
+                    <p>表示1,339回、クリック58回。認知検索では1ページ目を維持している。</p>
                   </article>
-                  <article class="theme-card">
-                    <h3>高級ワイン買取</h3>
-                    <p>高単価案件に直結しやすく、専門性訴求とも相性が良い。</p>
-                    <span>検索 / 比較 / LINE</span>
+                  <article class="score-card">
+                    <span>情報系: 森伊蔵 飲み方群</span>
+                    <strong>4〜5位</strong>
+                    <p>平均4〜5位台。専門知識のコンテンツは検索上位を作れる状態にある。</p>
                   </article>
-                  <article class="theme-card">
-                    <h3>ワインセラー整理・一括買取</h3>
-                    <p>複数本案件やコレクション整理需要を取り込みやすい。</p>
-                    <span>検索 / AI回答 / LINE</span>
+                  <article class="score-card">
+                    <span>買取系: 蔵王 お酒買取</span>
+                    <strong>3.2位</strong>
+                    <p>表示195回、クリック26回、CTR13.3%。指名を含む買取意図は強い。</p>
                   </article>
-                  <article class="theme-card">
-                    <h3>法人・飲食店在庫処分</h3>
-                    <p>大ロット案件につながりやすく、差別化しやすい。</p>
-                    <span>検索 / 紹介 / 営業</span>
+                  <article class="score-card">
+                    <span>高額買取: 響30年 買取群</span>
+                    <strong>16〜24位</strong>
+                    <p>表記ゆれを含む表示3,334回。高額案件の商談機会を取り切れていない。</p>
                   </article>
                 </div>
 
-                <div class="split-panel split-panel--short">
+                <div class="split-panel">
                   <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>LLMOの考え方</h3>
-                    <p>LLMOは、ChatGPT、Gemini、Google AI Overviews、Perplexityなどでブランド露出・引用・推薦を高めるための情報整備として位置づけます。</p>
-                  </article>
-                  <article class="split-panel__pane">
-                    <h3>ニーズ分析の結論</h3>
-                    <p>一般ワードの消耗戦ではなく、高単価案件に近い需要から受け皿を整備するのが現実的です。</p>
+                    <h3>分析からの示唆</h3>
+                    <p>指名・情報系・指名を含む買取系では上位を取れている。一方で「響30年 買取」「山崎55年 買取」など銘柄名の買取検索でも表示されており、蔵王リカーを認知していないユーザーへの新規接点はある。順位とCTRを改善できれば、新規案件の獲得余地が大きい。</p>
+                    <p>銘柄名・買取意図の検索において表示機会が確認できており、対策を強化することで、新規ユーザーの買取需要を獲得できる可能性は十分に見込める。</p>
                   </article>
                 </div>
               </div>
@@ -265,452 +381,713 @@
             </div>
           </section>
 
-          <section class="slide" id="slide-7" data-title="第2章 自社分析">
+          <section class="slide" id="slide-7" data-title="Googleビジネスプロフィール分析（GBP）">
             <div class="slide__frame">
-              <div class="chapter-intro">
-                <p class="chapter-intro__meta">Chapter 02</p>
-                <h2 class="chapter-intro__title">自社分析</h2>
-                <p class="chapter-intro__lead">
-                  次に、実データと現行導線から、自社の強みとボトルネックを整理します。
-                  どこに改善余地があるかを、集客と転換の両面で見ます。
-                </p>
+              <div class="side-pill">GBP</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">Local Search & Actions</p>
+                  <h2 class="title">GBPデータでは、<span class="accent">来店・購入目的</span>のユーザー行動が中心</h2>
+                  <p class="analysis-period">集計期間: 2026年2月〜7月</p>
+                </div>
+
+                <div class="score-grid">
+                  <article class="score-card">
+                    <span>プロフィール行動</span>
+                    <strong>1,380</strong>
+                    <p>通話・ルート・サイトクリックの合計。個人・法人・営業起点は未分離。</p>
+                  </article>
+                  <article class="score-card">
+                    <span>ルート検索</span>
+                    <strong>812</strong>
+                    <p>全行動の58.8%。持ち込み、営業訪問、仕入れ相談前の確認を含み得る。</p>
+                  </article>
+                  <article class="score-card">
+                    <span>サイトクリック</span>
+                    <strong>491</strong>
+                    <p>プロフィールからサイトへ遷移した数。フォーム・LINEへの導線改善余地がある。</p>
+                  </article>
+                  <article class="score-card">
+                    <span>通話</span>
+                    <strong>77</strong>
+                    <p>月別では3月を頂点に減少。営業日・掲載内容・計測期間を確認する。</p>
+                  </article>
+                </div>
+
+                <div class="split-panel">
+                  <article class="split-panel__pane split-panel__pane--accent">
+                    <h3>分析からの示唆</h3>
+                    <p>行動の中心は「ルート検索」であり、来店・購入検討におけるローカル接点としてGBPは機能している。</p>
+                  </article>
+                  <article class="split-panel__pane">
+                    <h3>GBPで明示すべき差別化</h3>
+                    <p>大阪での店頭買取、専門査定、持ち込み可否をプロフィール・投稿・写真で明示する。店舗で買い取れることを伝え、競合と差が出る来店買取の強みを可視化する。</p>
+                  </article>
+                </div>
+
               </div>
               <div class="slide__number">7</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-8" data-title="自社分析まとめ">
+          <section class="slide" id="slide-8" data-title="Webサイト分析">
             <div class="slide__frame">
-              <div class="side-pill">自社分析</div>
+              <div class="side-pill">Website</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Owned Media / GBP / Brand</p>
-                  <h2 class="title">自社分析: 今ある強みと、<span class="accent">取りこぼしている価値</span></h2>
+                  <p class="eyebrow">Website Analysis</p>
+                  <h2 class="title">査定導線への関心はある一方、<span class="accent">高額・法人案件の受け皿</span>が不足している</h2>
                 </div>
 
-                <div class="split-panel">
-                  <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>Fact: 現在の強み</h3>
-                    <ul class="mini-list">
-                      <li>Organic Searchが主力で、自然検索の土台が残っている</li>
-                      <li>査定ページ、LINE査定ページには既に需要がある</li>
-                      <li>GBPではルート検索とサイトクリックが強く、来店意図が見えている</li>
-                      <li>「近い」「すぐ相談できる」「持ち込める」という強みを持ちやすい</li>
-                    </ul>
+                <div class="theme-grid">
+                  <article class="theme-card">
+                    <h3>LINE査定の流れ</h3>
+                    <p>ページ別閲覧で2位。査定方法そのものへの関心を捉えられている。</p>
                   </article>
-                  <article class="split-panel__pane">
-                    <h3>Issue: 現在の弱み</h3>
-                    <ul class="mini-list">
-                      <li>高単価案件向けのLPや実績訴求が不足している</li>
-                      <li>販売店寄りの想起が混ざり、買取専門性が伝わりにくい</li>
-                      <li>FAQ、査定基準、価格透明性の見せ方が弱い</li>
-                      <li>CV計測が未整備で、どの流入が成果につながるか判断しにくい</li>
-                    </ul>
+                  <article class="theme-card">
+                    <h3>買取査定</h3>
+                    <p>ページ別閲覧で3位。買取を検討するユーザーの受け皿として機能している。</p>
+                  </article>
+                  <article class="theme-card">
+                    <h3>ワインセラー・空き瓶</h3>
+                    <p>関連ページに75閲覧があり、高額・一括整理ニーズの入口になり得る。</p>
+                  </article>
+                  <article class="theme-card">
+                    <h3>法人・大ロットの受け皿</h3>
+                    <p>上位ページに明確な専用ページが確認できず、案件が発生しても受け止めにくい。</p>
                   </article>
                 </div>
 
                 <p class="callout">
-                  自社の問題は「集客がゼロ」ではなく、`強みが高利益案件向けに翻訳されていないこと` にあります。
+                  現状サイトは、`LINE査定・買取査定` の基本導線には需要がある。一方で、高級ワイン・ワインセラー・法人在庫など、単価の高い買取目的に合わせた専用ページと訴求を強化する余地が大きい。
                 </p>
               </div>
               <div class="slide__number">8</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-9" data-title="Googleアナリティクス分析">
+          <section class="slide" id="slide-9" data-title="自社の課題">
             <div class="slide__frame">
-              <div class="side-pill">自社分析</div>
+              <div class="side-pill">Gap</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Owned Analysis</p>
-                  <h2 class="title">Googleアナリティクス分析: <span class="accent">流入はあるが、成果計測が弱い</span></h2>
-                </div>
-
-                <div class="score-grid">
-                  <article class="score-card">
-                    <span>対象期間</span>
-                    <strong>2026/1/1-7/14</strong>
-                    <p>GA4累計データを基に、流入構成と導線需要を確認。</p>
-                  </article>
-                  <article class="score-card">
-                    <span>Organic Search</span>
-                    <strong>8,136</strong>
-                    <p>総セッション 15,041 のうち約54%。自然検索が主力チャネル。</p>
-                  </article>
-                  <article class="score-card">
-                    <span>Direct</span>
-                    <strong>5,829</strong>
-                    <p>約39%を占める一方、ブランド流入と計測未整理流入が混在。</p>
-                  </article>
-                  <article class="score-card">
-                    <span>CV設定</span>
-                    <strong>要再設計</strong>
-                    <p>`form_submit 2,283件` に対しキーイベント総数は `9件` で乖離。</p>
-                  </article>
+                  <p class="eyebrow">Current Issues</p>
+                  <h2 class="title">課題は<span class="accent">情報不足</span>より<span class="accent">情報配置</span></h2>
                 </div>
 
                 <div class="split-panel">
                   <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>Fact</h3>
-                    <ul class="mini-list">
-                      <li>Organic Searchが最大流入で、SEO品質が成果に直結している</li>
-                      <li>上位閲覧ページに `LINE査定の流れ` と `買取査定` が入り、査定導線需要が明確</li>
-                      <li>モバイル利用が最多のため、スマホ導線の改善余地が大きい</li>
-                      <li>高単価案件に近い `ワインセラー` `高級ワイン` `LINE査定` `持ち込み` を別管理すべき</li>
-                    </ul>
+                    <h3>構造の課題</h3>
+                    <p>お酒買取 → 酒種 → 買取実績 へ飛びやすく、`ブランド` `銘柄` `相場` `FAQ` の中間ニーズを受け止めにくい。</p>
                   </article>
                   <article class="split-panel__pane">
-                    <h3>Implication / Action</h3>
-                    <ul class="mini-list">
-                      <li>`form_submit` `LINEクリック` `電話クリック` を正式CVとして再設定</li>
-                      <li>UTM運用とチャネル定義を整理し、Directの内訳を見える化</li>
-                      <li>スマホFV、追従CTA、電話/LINE配置を改善して取りこぼしを減らす</li>
-                      <li>高単価ページ群の流入・CVを個別KPIとして追う</li>
-                    </ul>
+                    <h3>運用の課題</h3>
+                    <p>既存の実績や専門知識が点在し、`比較・納得・問い合わせ` までを一連の導線として見せ切れていない。</p>
                   </article>
+                </div>
+
+                <div class="flow">
+                  <article class="flow-step"><h3>不足1</h3><p>銘柄入口</p></article>
+                  <article class="flow-step flow-step--accent"><h3>不足2</h3><p>価格・相場での比較</p></article>
+                  <article class="flow-step"><h3>不足3</h3><p>FAQでの不安解消</p></article>
                 </div>
               </div>
               <div class="slide__number">9</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-10" data-title="Search Console分析">
+          <section class="slide" id="slide-competitor-analysis" data-title="競合分析">
             <div class="slide__frame">
-              <div class="side-pill">自社分析</div>
+              <div class="chapter-intro">
+                <p class="chapter-intro__meta">Chapter 03</p>
+                <h2 class="chapter-intro__title">競合分析</h2>
+                <p class="chapter-intro__lead">検索構造、AIに引用される情報、査定への導線を比較し、ザオウリカーが取るべきポジションを定める。</p>
+              </div>
+              <div class="slide__number">13</div>
+            </div>
+          </section>
+
+          <section class="slide" id="slide-10" data-title="競合比較の見取り図">
+            <div class="slide__frame">
+              <div class="side-pill">Compare</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Owned Analysis</p>
-                  <h2 class="title">Search Console分析: <span class="accent">指名は強いが、非指名の買取需要を取り切れていない</span></h2>
+                  <p class="eyebrow">SEO & AIO Benchmark</p>
+                  <h2 class="title">競合は<span class="accent">検索意図別のページ設計</span>で新規需要を取り込んでいる</h2>
                 </div>
 
-                <div class="split-panel">
-                  <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>Fact</h3>
-                    <ul class="mini-list">
-                      <li>提供データは `2026年1月1日-7月14日` のクエリ別累計CSV</li>
-                      <li>ページ軸・日付軸がないため、URL別SEO評価や月別推移は未実施</li>
-                      <li>指名系クエリが強い一方、一般買取系クエリの母数はまだ小さい</li>
-                      <li>`森伊蔵 飲み方` `ウイスキー 終売 一覧` など情報収集クエリの露出が大きい</li>
-                    </ul>
-                  </article>
-                  <article class="split-panel__pane">
-                    <h3>Implication</h3>
-                    <ul class="mini-list">
-                      <li>ブランド認知は一定あるが、新規の非指名獲得余地が大きい</li>
-                      <li>コラム流入はあるものの、買取意図への接続設計が弱い</li>
-                      <li>広い一般語の総力戦より、勝ちやすく収益性の高いテーマ集中が現実的</li>
-                    </ul>
-                  </article>
-                </div>
-
-                <div class="flow">
-                  <article class="flow-step">
-                    <h3>流入源</h3>
-                    <p>指名系 + 情報収集系が中心</p>
-                  </article>
-                  <article class="flow-step flow-step--accent">
-                    <h3>狙うべき次段階</h3>
-                    <p>非指名の買取比較・査定意図へ広げる</p>
-                  </article>
-                  <article class="flow-step">
-                    <h3>優先テーマ</h3>
-                    <p>高級ワイン、ワインセラー、持ち込み、LINE査定、整理需要</p>
-                  </article>
+                <div class="comparison-table">
+                  <div class="comparison-row comparison-row--head">
+                    <span>比較論点</span>
+                    <span>競合の勝ち方</span>
+                    <span>ザオウリカーの現状</span>
+                    <span>ザオウへの示唆</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>検索入口</span>
+                    <span>酒種からブランド・銘柄まで独立ページで受ける</span>
+                    <span>酒種と実績が中心で、中間の検索意図が薄い</span>
+                    <span>高額銘柄・ワインの入口を優先して増やす</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>価格・相場</span>
+                    <span>銘柄別価格、相場、更新日を比較材料として提示</span>
+                    <span>実査定データはあるが、比較できる形に整理し切れていない</span>
+                    <span>査定実績を価格・相場コンテンツへ再編集する</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>実績・FAQ</span>
+                    <span>実績、条件、FAQを同一テーマ内で見せて不安を解消</span>
+                    <span>専門性の素材はあるが、回答根拠として点在</span>
+                    <span>銘柄・状態別の実績とFAQを1ページに集約する</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>AIOの回答根拠</span>
+                    <span>価格、実績、FAQ、専門家情報をAIが使いやすい形で蓄積</span>
+                    <span>古酒・レア酒の独自性を十分に構造化できていない</span>
+                    <span>一次情報を表・Q&A・構造化データへ変換する</span>
+                  </div>
                 </div>
 
                 <p class="callout">
-                  SEOは `一般買取ワードの総当たり` ではなく、
-                  `ワインセラー 買取` `高級ワイン銘柄` `大阪 持ち込み 酒買取` `LINE査定 酒買取`
-                  のような高単価・高確度テーマから積み上げる方針が適しています。
+                  競合との差は、専門性の有無ではなく、`ユーザーが検索した言葉に対して、価格・実績・不安解消までを一つのテーマで回答できるか` にある。
                 </p>
               </div>
               <div class="slide__number">10</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-11" data-title="MEO分析">
+          <section class="slide" id="slide-seo-score" data-title="SEO内部施策 総合評価">
             <div class="slide__frame">
-              <div class="side-pill">自社分析</div>
+              <div class="side-pill">SEO Score</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Owned Analysis</p>
-                  <h2 class="title">MEO分析: <span class="accent">来店意図は強いが、見られ方が酒屋寄り</span></h2>
+                  <p class="eyebrow">Overall SEO Assessment</p>
+                  <h2 class="title">SEO内部施策の総合評価では、<span class="accent">ページ構造と網羅性</span>に差がある</h2>
+                  <p class="analysis-period">公開ページをベースにした相対評価</p>
                 </div>
+                <div class="score-bar-chart" aria-label="SEO内部施策の総合評価">
+                  <article class="score-bar"><div class="score-bar__header"><span>ザオウリカー</span><strong>68</strong></div><div class="score-bar__track"><span style="width: 68%"></span></div><p>専門性はあるが、検索意図別の受け皿に改善余地。</p></article>
+                  <article class="score-bar"><div class="score-bar__header"><span>ファイブニーズ</span><strong>87</strong></div><div class="score-bar__track"><span style="width: 87%"></span></div><p>価格・実績・関連テーマを広く展開。</p></article>
+                  <article class="score-bar"><div class="score-bar__header"><span>JOYLAB</span><strong>92</strong></div><div class="score-bar__track"><span style="width: 92%"></span></div><p>カテゴリ、価格、実績、FAQの粒度が揃う。</p></article>
+                  <article class="score-bar"><div class="score-bar__header"><span>大黒屋</span><strong>95</strong></div><div class="score-bar__track"><span style="width: 95%"></span></div><p>銘柄・価格・実績を大規模に更新。</p></article>
+                </div>
+                <p class="callout">SEOでは「専門性」だけでなく、`検索意図ごとのページ構造・網羅性・価格情報の出し方`で競合との差が出ている。</p>
+              </div>
+              <div class="slide__number">15</div>
+            </div>
+          </section>
 
-                <div class="score-grid">
-                  <article class="score-card">
-                    <span>対象期間</span>
-                    <strong>2026/2-7</strong>
-                    <p>GBPスクリーンショットと補足データを基に整理。</p>
-                  </article>
-                  <article class="score-card">
-                    <span>総インタラクション</span>
-                    <strong>1,380</strong>
-                    <p>検索・マップでの露出自体は一定確保できている。</p>
-                  </article>
-                  <article class="score-card">
-                    <span>ルート検索</span>
-                    <strong>812</strong>
-                    <p>Webクリック 491件、通話 77件よりも来店意図が強い。</p>
-                  </article>
-                  <article class="score-card">
-                    <span>検索語句傾向</span>
-                    <strong>酒屋寄り</strong>
-                    <p>`liquor store` `whisky shop` など販売店想起が上位。</p>
-                  </article>
+          <section class="slide" id="slide-aio-score" data-title="AIO引用可能性 総合評価">
+            <div class="slide__frame">
+              <div class="side-pill">AIO Score</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">AIO Citation Readiness</p>
+                  <h2 class="title">AIに<span class="accent">回答根拠として使われやすい情報構造</span>にも差がある</h2>
+                  <p class="analysis-period">公開ページをベースにした相対評価</p>
+                </div>
+                <div class="score-bar-chart" aria-label="AIO引用可能性の総合評価">
+                  <article class="score-bar"><div class="score-bar__header"><span>ザオウリカー</span><strong>65</strong></div><div class="score-bar__track"><span style="width: 65%"></span></div><p>独自資産は強いが、回答・価格・FAQとして点在。</p></article>
+                  <article class="score-bar"><div class="score-bar__header"><span>ファイブニーズ</span><strong>80</strong></div><div class="score-bar__track"><span style="width: 80%"></span></div><p>高価買取の根拠と実績を回答材料として提示。</p></article>
+                  <article class="score-bar"><div class="score-bar__header"><span>JOYLAB</span><strong>84</strong></div><div class="score-bar__track"><span style="width: 84%"></span></div><p>カテゴリ・価格・FAQが比較検討を支える。</p></article>
+                  <article class="score-bar"><div class="score-bar__header"><span>大黒屋</span><strong>88</strong></div><div class="score-bar__track"><span style="width: 88%"></span></div><p>価格DBとブランド信頼が回答根拠になる。</p></article>
+                </div>
+                <p class="callout">改善余地: `質問形式の回答・価格表・査定根拠・専門家プロフィール・第三者言及`を整え、古酒・レア酒の独自性をAIが引用しやすい情報へ変える。</p>
+              </div>
+              <div class="slide__number">16</div>
+            </div>
+          </section>
+
+          <section class="slide" id="slide-aio-item-score" data-title="AIO評価項目別スコア">
+            <div class="slide__frame">
+              <div class="side-pill">AIO Detail</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">AIO Score Breakdown</p>
+                  <h2 class="title">ザオウリカーは<span class="accent">独自性が強い一方</span>、回答形式と価格情報に改善余地</h2>
+                  <p class="analysis-period">公開ページをベースにした相対評価</p>
+                </div>
+                <div class="comparison-table">
+                  <div class="comparison-row comparison-row--head">
+                    <span>評価項目</span><span>ザオウ</span><span>ファイブニーズ</span><span>JOYLAB</span><span>大黒屋</span>
+                  </div>
+                  <div class="comparison-row"><span>回答可能性</span><span>65</span><span>80</span><span>85</span><span>90</span></div>
+                  <div class="comparison-row"><span>価格・相場情報</span><span>50</span><span>85</span><span>88</span><span>95</span></div>
+                  <div class="comparison-row"><span>買取実績の根拠性</span><span>75</span><span>88</span><span>90</span><span>95</span></div>
+                  <div class="comparison-row"><span>専門性・独自性</span><span>90</span><span>82</span><span>84</span><span>80</span></div>
+                  <div class="comparison-row"><span>FAQ・構造化</span><span>60</span><span>78</span><span>82</span><span>88</span></div>
+                  <div class="comparison-row"><span>第三者言及・知名度</span><span>55</span><span>78</span><span>80</span><span>90</span></div>
+                </div>
+                <p class="callout">ポイント: ザオウリカーは独自性が高い。AIOでは、その専門性を`Q&A・価格表・買取実績データ`としてAIが読み取りやすい形に変換する必要がある。</p>
+              </div>
+              <div class="slide__number">17</div>
+            </div>
+          </section>
+
+          <section class="slide" id="slide-11" data-title="競合サイトのSEO構造">
+            <div class="slide__frame">
+              <div class="side-pill">Structure</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">SEO Structure</p>
+                  <h2 class="title">競合は<span class="accent">検索意図ごとの受け皿</span>を細かく持っている</h2>
                 </div>
 
                 <div class="split-panel">
                   <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>Fact</h3>
-                    <ul class="mini-list">
-                      <li>近隣ユーザーの来店ニーズはあり、MEOは案件化余地の高い接点</li>
-                      <li>一方で買取専門店としての理解が弱く、販売店・酒屋文脈が混在</li>
-                      <li>2025年3月に閲覧ユーザー数ピークがあり、波及余地は確認できる</li>
-                    </ul>
+                    <h3>ザオウリカー｜現状</h3>
+                    <div class="flow">
+                      <article class="flow-step"><h3>お酒買取</h3></article>
+                      <article class="flow-step"><h3>酒種</h3></article>
+                      <article class="flow-step"><h3>買取実績</h3></article>
+                    </div>
+                    <p>情報はあるが、銘柄・価格・状態別の検索入口が独立ページとして不足している。</p>
                   </article>
                   <article class="split-panel__pane">
-                    <h3>Action</h3>
-                    <ul class="mini-list">
-                      <li>GBPカテゴリ、説明文、商品/サービス名を買取寄りに見直す</li>
-                      <li>持ち込みのしやすさ、査定スピード、アクセス情報を強化する</li>
-                      <li>口コミ返信や投稿でも `安心` `高額査定` `持ち込み` を言語化する</li>
-                    </ul>
+                    <h3>競合｜典型構造</h3>
+                    <div class="flow">
+                      <article class="flow-step"><h3>酒種</h3></article>
+                      <article class="flow-step"><h3>銘柄</h3></article>
+                      <article class="flow-step"><h3>価格・相場</h3></article>
+                    </div>
+                    <div class="flow">
+                      <article class="flow-step"><h3>買取実績</h3></article>
+                      <article class="flow-step"><h3>FAQ</h3></article>
+                      <article class="flow-step flow-step--accent"><h3>査定</h3></article>
+                    </div>
+                    <p>検索入口から価格・不安解消・査定までを同じテーマ内でつなげている。</p>
                   </article>
                 </div>
+
+                <p class="callout">分析からの示唆: 次に増やすべきは酒種ページではなく、`銘柄 → 価格・相場 → 実績 → FAQ` の中間層である。この階層が、SEOとAI回答の両方で引用される根拠になる。</p>
               </div>
               <div class="slide__number">11</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-12" data-title="内部施策分析">
+          <section class="slide" id="slide-12" data-title="お酒買取ページ比較">
             <div class="slide__frame">
-              <div class="side-pill">自社分析</div>
+              <div class="side-pill">Top Page</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Owned Analysis</p>
-                  <h2 class="title">内部施策分析: <span class="accent">勝ち筋はあるが、受け皿設計が足りない</span></h2>
+                  <p class="eyebrow">Top Page Comparison</p>
+                  <h2 class="title">最大の差は<span class="accent">価格・相場・銘柄</span>への入口設計にある</h2>
                 </div>
 
-                <div class="split-panel">
-                  <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>Fact</h3>
-                    <ul class="mini-list">
-                      <li>`LINE査定` `買取査定` への関心が高く、相談導線自体の需要はある</li>
-                      <li>自然検索とGBPの両方から接点があり、既存の集客土台は残っている</li>
-                      <li>ザオウリカー本体は `持ち込み` `LINE` `スピード` `安心感` を強みにしやすい</li>
-                    </ul>
-                  </article>
-                  <article class="split-panel__pane">
-                    <h3>Gap</h3>
-                    <ul class="mini-list">
-                      <li>高級ワイン・ワインセラー一括買取の専用LP</li>
-                      <li>大阪・店頭持ち込み買取の訴求ページ</li>
-                      <li>法人・飲食店・酒販店向け大量買取ページ</li>
-                      <li>情報記事から査定へつなぐCTAと比較・安心コンテンツ</li>
-                    </ul>
-                  </article>
+                <div class="comparison-table">
+                  <div class="comparison-row comparison-row--head">
+                    <span>項目</span>
+                    <span>ザオウ</span>
+                    <span>ファイブニーズ</span>
+                    <span>JOYLAB</span>
+                    <span>大黒屋</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>酒種カテゴリ</span>
+                    <span>○</span>
+                    <span>○</span>
+                    <span>◎</span>
+                    <span>◎</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>買取価格・相場</span>
+                    <span>△</span>
+                    <span>◎</span>
+                    <span>◎</span>
+                    <span>◎</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>買取実績</span>
+                    <span>○</span>
+                    <span>◎</span>
+                    <span>◎</span>
+                    <span>◎</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>銘柄導線・FAQ</span>
+                    <span>△</span>
+                    <span>◎</span>
+                    <span>◎</span>
+                    <span>◎</span>
+                  </div>
                 </div>
 
                 <p class="callout">
-                  Lオクと役割を混在させず、ザオウリカーは
-                  `近隣持ち込み` `すぐ査定` `LINEで気軽に相談` `ワインセラーやコレクションのまとめ売り`
-                  に寄せた受け皿を増やすのが有効です。
+                  分析からの示唆: ザオウは酒種そのものは揃っている。次に必要なのは、`酒種の追加`より`価格・相場・銘柄への入口`を明確にすることだ。
                 </p>
               </div>
               <div class="slide__number">12</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-13" data-title="第3章 競合分析">
+          <section class="slide" id="slide-category-seo-gap" data-title="カテゴリページのSEOギャップ">
             <div class="slide__frame">
-              <div class="chapter-intro">
-                <p class="chapter-intro__meta">Chapter 03</p>
-                <h2 class="chapter-intro__title">競合分析</h2>
-                <p class="chapter-intro__lead">
-                  競合は同じお酒買取でも、売却動機ごとに役割を分けています。
-                  その違いを把握したうえで、ザオウリカーの勝ち筋を定めます。
+              <div class="side-pill">Category SEO</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">Category Page Gap</p>
+                  <h2 class="title"><span class="accent">酒種8分類</span>から、検索テーマ単位の受け皿へ</h2>
+                </div>
+                <div class="split-panel">
+                  <article class="split-panel__pane split-panel__pane--accent">
+                    <h3>ザオウリカー｜現状</h3>
+                    <div class="flow">
+                      <article class="flow-step"><h3>ウイスキー</h3></article>
+                      <article class="flow-step"><h3>ワイン</h3></article>
+                      <article class="flow-step"><h3>日本酒ほか</h3></article>
+                    </div>
+                    <p>ウイスキー、ワイン、ブランデー、日本酒、焼酎、スピリッツ、リキュール、その他の酒種で整理されている。</p>
+                  </article>
+                  <article class="split-panel__pane">
+                    <h3>競合の考え方</h3>
+                    <div class="flow">
+                      <article class="flow-step"><h3>酒種</h3></article>
+                      <article class="flow-step"><h3>種類</h3></article>
+                      <article class="flow-step"><h3>ブランド</h3></article>
+                    </div>
+                    <div class="flow"><article class="flow-step flow-step--accent"><h3>銘柄</h3><p>例: 山崎12年</p></article></div>
+                    <p>カテゴリ下で、銘柄・状態・価格に関する個別の検索意図を受け止める。</p>
+                  </article>
+                </div>
+                <p class="callout">AIOの示唆: 「古い山崎は売れるか」「箱なしでも買取可能か」といった質問に、カテゴリページとその下層ページで直接答えられる構成へ変える。</p>
+              </div>
+              <div class="slide__number">20</div>
+            </div>
+          </section>
+
+          <section class="slide" id="slide-brand-seo-gap" data-title="銘柄SEOのギャップ">
+            <div class="slide__frame">
+              <div class="side-pill">Brand SEO</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">Brand Page Gap</p>
+                  <h2 class="title">「<span class="accent">銘柄名 + 買取</span>」を受け止める専用ページが必要</h2>
+                </div>
+                <div class="split-panel">
+                  <article class="split-panel__pane">
+                    <h3>検索ユーザーの質問</h3>
+                    <ul class="mini-list">
+                      <li>山崎 買取 / 山崎12年 買取</li>
+                      <li>古い山崎 買取 / 箱なし 山崎 買取</li>
+                      <li>マッカラン 買取 / 響 買取相場</li>
+                    </ul>
+                  </article>
+                  <article class="split-panel__pane split-panel__pane--accent">
+                    <h3>推奨: 銘柄ページの標準構成</h3>
+                    <ul class="mini-list">
+                      <li>対象年数・種類別の買取価格・相場</li>
+                      <li>実際の買取実績と高く売れる条件</li>
+                      <li>箱なし・旧ボトル・状態別のFAQ</li>
+                      <li>LINE査定への導線</li>
+                    </ul>
+                  </article>
+                </div>
+                <p class="callout">「検索入口」と「回答根拠」を同じページで接続する。優先度は、Search Consoleで表示機会がある`山崎` `響`に加え、高額ワイン銘柄へ展開する。</p>
+              </div>
+              <div class="slide__number">21</div>
+            </div>
+          </section>
+
+          <section class="slide" id="slide-13" data-title="ブランド・銘柄比較">
+            <div class="slide__frame">
+              <div class="side-pill">Brand SEO</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">Brand Keyword</p>
+                  <h2 class="title">ブランド・銘柄は<span class="accent">指名検索の主戦場</span></h2>
+                </div>
+
+                <div class="comparison-table">
+                  <div class="comparison-row comparison-row--head">
+                    <span>会社</span>
+                    <span>現状</span>
+                    <span>強み</span>
+                    <span>分析</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>ザオウ</span>
+                    <span>重点銘柄の独立入口はまだ薄い</span>
+                    <span>レア酒・古酒文脈には相性が良い</span>
+                    <span>`山崎 買取` などの入口不足で機会損失が起きやすい</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>ファイブニーズ</span>
+                    <span>銘柄軸へ展開しやすい</span>
+                    <span>主要ブランドを押さえやすい</span>
+                    <span>広く取りにいく設計</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>JOYLAB</span>
+                    <span>銘柄まで深く落とし込む</span>
+                    <span>カテゴリから銘柄への導線が自然</span>
+                    <span>比較検討前後の両方を拾える</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>大黒屋</span>
+                    <span>山崎・響・白州・竹鶴・余市・マッカランなど幅広い</span>
+                    <span>下位階層まで独立URL化</span>
+                    <span>銘柄SEOの層の厚さが最大の差</span>
+                  </div>
+                </div>
+
+                <p class="callout">
+                  分析: 優先度Sは `山崎買取` `響買取` `マッカラン買取`。ここは競合比較でも差が見えやすく、作る効果が説明しやすい領域です。
                 </p>
               </div>
               <div class="slide__number">13</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-14" data-title="競合分析まとめ">
+          <section class="slide" id="slide-14" data-title="価格・相場比較">
             <div class="slide__frame">
-              <div class="side-pill">競合分析</div>
+              <div class="side-pill">Price</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Competitive Analysis</p>
-                  <h2 class="title">競合分析まとめ: <span class="accent">Five Needs と JOYLAB は勝ち方が違う</span></h2>
+                  <p class="eyebrow">Price Content</p>
+                  <h2 class="title">価格・相場は<span class="accent">比較検討の決定打</span>になる</h2>
                 </div>
-
-                <p class="lead">比較軸を `SEO / AIO(LLMO) / CV` に固定すると、両社の強みは明確に分かれます。</p>
 
                 <div class="comparison-table">
                   <div class="comparison-row comparison-row--head">
-                    <span>比較軸</span>
-                    <span>Five Needs</span>
+                    <span>会社</span>
+                    <span>現状</span>
+                    <span>強み</span>
+                    <span>分析</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>ザオウ</span>
+                    <span>価格訴求は限定的</span>
+                    <span>実査定データを根拠にしやすい</span>
+                    <span>価格を見せ始めるだけでも競争力が上がる余地がある</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>ファイブニーズ</span>
+                    <span>価格情報を集客に使いやすい</span>
+                    <span>広い検索需要を拾える</span>
+                    <span>価格検索との相性が良い</span>
+                  </div>
+                  <div class="comparison-row">
                     <span>JOYLAB</span>
+                    <span>価格とカテゴリを接続しやすい</span>
+                    <span>比較導線を作りやすい</span>
+                    <span>納得形成に強い</span>
                   </div>
                   <div class="comparison-row">
-                    <span>検索で見つかる力</span>
-                    <span>カテゴリ・銘柄別ページが多く、SEOで面を取りにいく設計</span>
-                    <span>価格表・カテゴリ・FAQ・店舗導線が整理され、SEOとCVを両立</span>
-                  </div>
-                  <div class="comparison-row">
-                    <span>AIに理解される力</span>
-                    <span>情報量は多いが、LPは売る力優先でやや訴求先行</span>
-                    <span>価格、方法、FAQ、店舗、法人導線が明快で理解しやすい</span>
-                  </div>
-                  <div class="comparison-row">
-                    <span>AIに引用される力</span>
-                    <span>銘柄別ページ、価格推移、実績が多く引用素材が豊富</span>
-                    <span>更新日付き価格情報や人気銘柄一覧が引用されやすい</span>
-                  </div>
-                  <div class="comparison-row">
-                    <span>CVさせる力</span>
-                    <span>高額査定、最短5分、即現金化、キャンペーンで背中を押す</span>
-                    <span>完全無料、安心感、状態難あり対応で不安を消して相談させる</span>
+                    <span>大黒屋</span>
+                    <span>日付・商品・価格付きで継続更新</span>
+                    <span>価格DBとしての信頼が高い</span>
+                    <span>単なるページ数ではなく更新密度が強み</span>
                   </div>
                 </div>
 
                 <p class="callout">
-                  Five Needs は `SEO横展開と価格訴求`、JOYLAB は `情報整理と安心CV設計` が強みです。
-                  ザオウリカーは、Five Needs の集客設計と JOYLAB のCV設計を掛け合わせるのが有効です。
+                  分析: ザオウは `価格表を作る` というより、`実際の査定データを価格・相場ページとして再編集する` ほうがブランドに合っています。
                 </p>
               </div>
               <div class="slide__number">14</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-15" data-title="Five Needs分析">
+          <section class="slide" id="slide-15" data-title="買取実績比較">
             <div class="slide__frame">
-              <div class="side-pill">競合分析</div>
+              <div class="side-pill">Evidence</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Competitive Analysis</p>
-                  <h2 class="title">Five Needs分析: <span class="accent">SEO横展開と価格訴求</span>が強い</h2>
+                  <p class="eyebrow">Proof Content</p>
+                  <h2 class="title">買取実績は<span class="accent">ザオウが最も勝負しやすい資産</span></h2>
                 </div>
-                <div class="split-panel">
-                  <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>Strength</h3>
-                    <ul class="mini-list">
-                      <li>カテゴリ別、銘柄別、価格推移ページが多く、検索面を広く押さえている</li>
-                      <li>`お酒買取日本一` の訴求でブランド想起を作っている</li>
-                      <li>価格推移、買取実績、人気銘柄一覧があり、AIが拾える具体情報が多い</li>
-                      <li>大量買取や高く売るコツなど、周辺テーマもSEOで取りにいく設計</li>
-                    </ul>
-                  </article>
-                  <article class="split-panel__pane">
-                    <h3>Implication for ZAO</h3>
-                    <ul class="mini-list">
-                      <li>`最短5分` `即現金化` `キャンペーン` で今すぐ相談したくなる導線</li>
-                      <li>電話とLINEの導線が強く、スピード感のある査定訴求が中心</li>
-                      <li>ターゲットは `高く売りたい層` `高額酒保有者` `大量在庫を持つ法人`</li>
-                      <li>ザオウリカーは `高価買取の根拠` `価格透明性` `実績の見せ方` を学びたい</li>
-                    </ul>
-                  </article>
+
+                <div class="comparison-table">
+                  <div class="comparison-row comparison-row--head">
+                    <span>会社</span>
+                    <span>現状</span>
+                    <span>強み</span>
+                    <span>分析</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>ザオウ</span>
+                    <span>実績素材は豊富</span>
+                    <span>古酒・ヴィンテージ・レアボトルで<br />独自性が高い</span>
+                    <span>ここをSEO入口と証拠に変えられると一気に強くなる</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>ファイブニーズ</span>
+                    <span>実績を集客導線に組み込みやすい</span>
+                    <span>横展開との相性が良い</span>
+                    <span>量で安心感を作るタイプ</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>JOYLAB</span>
+                    <span>カテゴリ整理と合わせやすい</span>
+                    <span>ページ全体の説明力が高い</span>
+                    <span>実績を比較文脈に自然接続できる</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>大黒屋</span>
+                    <span>日付・商品・価格付きで継続更新</span>
+                    <span>証拠として分かりやすい</span>
+                    <span>更新頻度と見せ方の運用力が強い</span>
+                  </div>
                 </div>
-                <p class="callout">Five Needs は、`検索で面を取る力` と `価格で動かす力` が非常に強い競合です。</p>
+
+                <p class="callout">
+                  分析: ザオウの差別化は `実績の量` だけでなく `実績の中身の専門性` にあります。構造さえ整えば、ここは競合に対して十分戦えます。
+                </p>
               </div>
               <div class="slide__number">15</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-16" data-title="JOYLAB分析">
+          <section class="slide" id="slide-16" data-title="FAQ・コラム比較">
             <div class="slide__frame">
-              <div class="side-pill">競合分析</div>
+              <div class="side-pill">Position</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Competitive Analysis</p>
-                  <h2 class="title">JOYLAB分析: <span class="accent">情報整理と安心CV設計</span>が強い</h2>
+                  <p class="eyebrow">FAQ / Column</p>
+                  <h2 class="title">FAQ・コラムは<span class="accent">不安解消とAI引用</span>の受け皿</h2>
                 </div>
-                <div class="split-panel">
-                  <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>Strength</h3>
-                    <ul class="mini-list">
-                      <li>価格表、参考価格表、カテゴリ、FAQ、店舗一覧が整理されている</li>
-                      <li>更新日付きの価格情報や人気銘柄一覧があり、AIにも人にも読みやすい</li>
-                      <li>`古いお酒・状態が悪いお酒` `法人のお客様へ` など対象別の受け皿が明確</li>
-                      <li>情報構造が素直で、サービス理解や比較検討に向いている</li>
-                    </ul>
-                  </article>
-                  <article class="split-panel__pane">
-                    <h3>Implication for ZAO</h3>
-                    <ul class="mini-list">
-                      <li>`完全無料` `お客さま費用ゼロ` で査定ハードルを大きく下げている</li>
-                      <li>LINE、オンライン、電話の導線が分かりやすく、初回相談しやすい</li>
-                      <li>ターゲットは `安心して売りたい一般個人` `状態難ありを相談したい層` `法人`</li>
-                      <li>ザオウリカーは `負担ゼロ` `安心感` `相談しやすさ` の訴求を強化したい</li>
-                    </ul>
-                  </article>
+
+                <div class="comparison-table">
+                  <div class="comparison-row comparison-row--head">
+                    <span>会社</span>
+                    <span>現状</span>
+                    <span>強み</span>
+                    <span>分析</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>ザオウ</span>
+                    <span>補足情報の層はまだ薄い</span>
+                    <span>専門査定の文脈には深くできる余地がある</span>
+                    <span>高額酒の不安解消FAQと相性が良い</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>ファイブニーズ</span>
+                    <span>ノウハウ展開しやすい</span>
+                    <span>検索入口を増やしやすい</span>
+                    <span>幅広い情報収集層を取れる</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>JOYLAB</span>
+                    <span>FAQとカテゴリがつながっている</span>
+                    <span>比較・納得の文脈に強い</span>
+                    <span>CV直前の不安解消がうまい</span>
+                  </div>
+                  <div class="comparison-row">
+                    <span>大黒屋</span>
+                    <span>大規模サイトとして情報量が多い</span>
+                    <span>信頼形成しやすい</span>
+                    <span>総合力で押しやすいが、専門テーマでは差別化余地も残る</span>
+                  </div>
                 </div>
-                <p class="callout">JOYLAB は、`AIにも人にも理解されやすい構造` と `安心して相談させる力` が強い競合です。</p>
+
+                <p class="callout">
+                  分析: FAQは後回しではなく、`高く売れる条件` `古酒でも査定できる理由` `箱なし・ラベル傷みの扱い` などを先に整えると、SEOとAIOの両方に効きます。
+                </p>
               </div>
               <div class="slide__number">16</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-17" data-title="福ちゃん分析">
+          <section class="slide" id="slide-action-plan" data-title="対策プランのご提案">
             <div class="slide__frame">
-              <div class="side-pill">競合分析</div>
+              <div class="chapter-intro">
+                <p class="chapter-intro__meta">Chapter 04</p>
+                <h2 class="chapter-intro__title">対策プランのご提案</h2>
+                <p class="chapter-intro__lead">サイト構造、優先ページ、計測、SEO・AIOの順に、実行可能な改善プランへ落とし込む。</p>
+              </div>
+              <div class="slide__number">26</div>
+            </div>
+          </section>
+
+          <section class="slide" id="slide-seo-aio-strategy-map" data-title="SEO・AIO戦略マップ">
+            <div class="slide__frame"><div class="side-pill">Strategy Map</div><img class="strategy-map-image" src="./assets/seo-aio-strategy-map.png" alt="検索意図を一次情報と査定導線でつなぐSEO・AIO戦略マップ" /><div class="slide__number">27</div></div>
+          </section>
+
+          <section class="slide" id="slide-evidence-plan" data-title="買取実績の資産化">
+            <div class="slide__frame"><div class="side-pill">High Value</div><div class="slide__main"><div class="slide__header"><p class="eyebrow">High Value | Action Detail</p><h2 class="title">高額銘柄・相場の買取実績を<span class="accent">SEO・AIOの証拠データ</span>として再配置する</h2></div><div class="flow"><article class="flow-step"><h3>検索入口</h3><p>マッカラン買取</p></article><article class="flow-step"><h3>商品軸</h3><p>マッカラン18年</p></article><article class="flow-step"><h3>価格軸</h3><p>買取価格・相場</p></article><article class="flow-step"><h3>一次情報</h3><p>実際の買取実績</p></article><article class="flow-step flow-step--accent"><h3>CV</h3><p>LINE査定</p></article></div><p class="callout">「買い取りました」で終わらせず、銘柄ページから実績へ内部リンクし、検索評価・AI引用・査定導線を集約する。</p></div><div class="slide__number">28</div></div>
+          </section>
+
+          <section class="slide" id="slide-price-plan" data-title="買取価格・相場コンテンツ">
+            <div class="slide__frame"><div class="side-pill">High Value</div><div class="slide__main"><div class="slide__header"><p class="eyebrow">High Value | Action Detail</p><h2 class="title">高額銘柄・相場では、<span class="accent">参考価格</span>と査定根拠を具体的に伝える</h2></div><div class="split-panel"><article class="split-panel__pane"><h3>公開する情報</h3><ul class="mini-list"><li>銘柄別の参考価格・相場傾向・更新日</li><li>代表的な買取実績と査定時点</li><li>個別査定で最終金額を提示する旨</li></ul></article><article class="split-panel__pane split-panel__pane--accent"><h3>専門性として伝える根拠</h3><ul class="mini-list"><li>年代・状態・箱・付属品による差</li><li>ヴィンテージ・レア酒の査定事例</li><li>ロット・保管状況・市場動向の確認方法</li></ul></article></div><p class="callout">法人取引を含むため、確定金額の一律掲載はしない。`参考価格 + 査定根拠 + 個別条件で変動する理由`をセットで提示し、最終金額はLINE・電話・フォームで個別に案内する。</p></div><div class="slide__number">29</div></div>
+          </section>
+
+          <section class="slide" id="slide-aio-answer-plan" data-title="AIO回答設計">
+            <div class="slide__frame"><div class="side-pill">Collection</div><div class="slide__main"><div class="slide__header"><p class="eyebrow">Collection | Action Detail</p><h2 class="title">古酒・コレクションの不安を、<span class="accent">回答ページ</span>で解消する</h2></div><div class="score-grid"><article class="score-card"><span>短い結論</span><strong>答えを先に</strong><p>ページ冒頭で質問への答えを明示。</p></article><article class="score-card"><span>表形式</span><strong>比較しやすく</strong><p>価格・条件・相場を整理。</p></article><article class="score-card"><span>FAQ</span><strong>不安を解消</strong><p>箱なし・古酒・開封済みに回答。</p></article><article class="score-card"><span>専門家情報</span><strong>根拠を明示</strong><p>査定基準・経験・実績を示す。</p></article></div><p class="callout">古いウイスキーは売れるか、父のコレクションを売りたいなど、想定質問ごとに価格・実績・FAQ・査定への導線を揃える。</p></div><div class="slide__number">30</div></div>
+          </section>
+
+          <section class="slide" id="slide-trust-plan" data-title="第三者言及・E-E-A-T">
+            <div class="slide__frame"><div class="side-pill">Collection</div><div class="slide__main"><div class="slide__header"><p class="eyebrow">Collection | Action Detail</p><h2 class="title">古酒・コレクションの専門査定を、<span class="accent">誰が・どう判断するか</span>まで見える化する</h2></div><div class="split-panel"><article class="split-panel__pane"><h3>サイト内で整える情報</h3><ul class="mini-list"><li>査定員の経験・得意ジャンル・実績</li><li>査定基準: ラベル・液面・箱・保管状態</li><li>商品名・状態・価格・日付付きの実績</li></ul></article><article class="split-panel__pane split-panel__pane--accent"><h3>サイト外で増やす言及</h3><ul class="mini-list"><li>地域・酒専門メディアでの掲載</li><li>買取事例のPR・監修記事</li><li>Googleビジネスプロフィールの整備</li></ul></article></div><p class="callout">「古酒・レア酒の専門買取」という特徴を、自社サイトと第三者の両方で確認できる状態へ近づける。</p></div><div class="slide__number">31</div></div>
+          </section>
+
+          <section class="slide" id="slide-position-plan" data-title="地域・売却方法">
+            <div class="slide__frame"><div class="side-pill">Local</div><div class="slide__main"><div class="slide__header"><p class="eyebrow">Local | Action Detail</p><h2 class="title">地域・売却方法ごとに、<span class="accent">査定前の不安</span>を解消する</h2></div><div class="split-panel"><article class="split-panel__pane"><h3>大阪・店頭持ち込み</h3><ul class="mini-list"><li>住所・アクセス・営業時間・予約要否</li><li>駐車場・査定時間・持ち込み可否</li><li>高額品を持参する際の相談方法</li></ul></article><article class="split-panel__pane split-panel__pane--accent"><h3>LINE・電話・出張</h3><ul class="mini-list"><li>送る写真の例と、おおよその回答時間</li><li>出張対応エリア・対象ロット・流れ</li><li>LINE / 電話 / フォームの使い分け</li></ul></article></div><p class="callout">GBPには大阪での店頭買取・専門査定・持ち込み可否を明記する。Webサイトは売却方法別に、LINE・電話・フォームへ迷わず進める導線を用意する。</p></div><div class="slide__number">32</div></div>
+          </section>
+
+          <section class="slide" id="slide-qa-plan" data-title="法人・大量整理">
+            <div class="slide__frame"><div class="side-pill">BtoB</div><div class="slide__main"><div class="slide__header"><p class="eyebrow">BtoB | Action Detail</p><h2 class="title">法人・大量整理は、<span class="accent">対応条件と事例</span>を先に示す</h2></div><div class="comparison-table"><div class="comparison-row comparison-row--head"><span>対象案件</span><span>事前に示す情報</span><span>一次情報・安心材料</span><span>CV・計測</span></div><div class="comparison-row"><span>法人在庫</span><span>ロット・必要書類・対応範囲</span><span>査定基準・匿名事例</span><span>営業窓口 / 商談化</span></div><div class="comparison-row"><span>飲食店閉店</span><span>期限・搬出・一括対応の流れ</span><span>対応フロー・事例</span><span>電話 / フォーム</span></div><div class="comparison-row"><span>酒販店・ワインセラー</span><span>取扱カテゴリ・保管状態・価格提示</span><span>専門査定・高額品実績</span><span>ロット / 高額案件数</span></div></div><p class="callout">法人・閉店関連は、議事録から設定した検証テーマであり、Search Consoleの実測需要とは分けて扱う。営業での訴求とCRMの流入元・案件種別・ロット記録を連動させて検証する。</p></div><div class="slide__number">33</div></div>
+          </section>
+
+          <section class="slide" id="slide-keyword-strategy" data-title="キーワード戦略">
+            <div class="slide__frame"><div class="side-pill">Keyword</div><div class="slide__main"><div class="slide__header"><p class="eyebrow">Keyword Strategy</p><h2 class="title"><span class="accent">55語</span>を、実測需要と検証テーマに分けて優先する</h2></div><div class="comparison-table"><div class="comparison-row comparison-row--head"><span>優先群</span><span>代表キーワード</span><span>根拠</span><span>受け皿</span></div><div class="comparison-row"><span>S | 高額銘柄</span><span>響30年 / 山崎55年 / 高額ワイン名 + 買取</span><span>Search Console実測</span><span>銘柄・価格・実績</span></div><div class="comparison-row"><span>S | 一般・地域</span><span>お酒買取 大阪 / LINE査定 / 古酒買取</span><span>Search Console実測</span><span>買取総合・大阪店頭・LINE</span></div><div class="comparison-row"><span>S | ワイン</span><span>ワインセラー / ロマネコンティ / サッシカイア</span><span>実測 + 競合調査</span><span>高級ワイン・一括買取</span></div><div class="comparison-row"><span>A | 法人・大量</span><span>法人酒買取 / 在庫処分 / 飲食店閉店</span><span>議事録由来の検証テーマ</span><span>法人・大量買取LP</span></div></div><p class="callout">55語の全一覧は、<a href="./keyword-list.csv" download>スプレッドシート用CSV</a>で確認する。指名5語・一般10語・高額ウイスキー10語・希少ウイスキー10語・高額ワイン10語・BtoB検証10語で管理する。</p></div><div class="slide__number">33</div></div>
+          </section>
+
+          <section class="slide" id="slide-content-plan" data-title="記事テーマ設計">
+            <div class="slide__frame"><div class="side-pill">Content</div><div class="slide__main"><div class="slide__header"><p class="eyebrow">Content Plan</p><h2 class="title"><span class="accent">36本</span>の記事を、査定に近いテーマから設計する</h2></div><div class="score-grid"><article class="score-card"><span>銘柄・相場</span><strong>10本</strong><p>山崎・響・白州・マッカラン、年数別・相場・売却条件。</p></article><article class="score-card"><span>古酒・状態</span><strong>10本</strong><p>旧ボトル、箱なし、液面低下、ヴィンテージ、保管状態。</p></article><article class="score-card"><span>高級ワイン</span><strong>8本</strong><p>ワインセラー、5大シャトー、ロマネコンティ、オーパスワン。</p></article><article class="score-card"><span>売却方法・BtoB</span><strong>8本</strong><p>LINE、持ち込み、出張、閉店、在庫、遺品・整理。</p></article></div><p class="callout">36本の全一覧は、<a href="./article-theme-list.csv" download>スプレッドシート用CSV</a>で確認する。各記事は、`結論 → 査定根拠 → 関連する価格・実績 → LINE査定`の順に統一し、情報収集を査定相談へつなげる。</p></div><div class="slide__number">34</div></div>
+          </section>
+
+          <section class="slide" id="slide-brand-guideline" data-title="CEP・訴求軸・接点ガイド">
+            <div class="slide__frame"><div class="side-pill">Brand</div><div class="slide__main"><div class="slide__header"><p class="eyebrow">CEP & Brand Guide</p><h2 class="title">顧客の状況ごとに、<span class="accent">専門査定の安心感</span>を一貫して伝える</h2></div><div class="split-panel"><article class="split-panel__pane"><h3>主なCEP</h3><ul class="mini-list"><li>価値が分からない古酒を売りたい</li><li>高額銘柄を適正に売りたい</li><li>ワインセラーを一括整理したい</li><li>店舗・法人の在庫を急ぎ整理したい</li><li>大阪で持ち込み査定したい</li></ul></article><article class="split-panel__pane split-panel__pane--accent"><h3>接点別の反映</h3><ul class="mini-list"><li>Web: 価格・実績・FAQ・査定条件</li><li>GBP: 店頭買取・アクセス・営業時間</li><li>LINE: 写真例・回答時間・相談の流れ</li><li>営業資料: 法人条件・対応事例・ロット</li></ul></article></div><p class="callout">ブランドコンセプト: `価値が分からない古酒・レア酒まで、専門査定と市場知見で適正に見極める買取店`。</p></div><div class="slide__number">35</div></div>
+          </section>
+
+          <section class="slide" id="slide-17" data-title="推奨サイト構造">
+            <div class="slide__frame">
+              <div class="side-pill">Structure</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Competitive Analysis</p>
-                  <h2 class="title">福ちゃん分析: <span class="accent">整理・処分ニーズ</span>への寄り添いが強い</h2>
+                  <p class="eyebrow">Recommended Structure</p>
+                  <h2 class="title">既存資産を<span class="accent">検索意図別のハブ</span>に再構築する</h2>
                 </div>
-                <div class="split-panel">
-                  <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>サイトの目的・特徴</h3>
-                    <ul class="mini-list">
-                      <li>遺品整理、生前整理、閉店整理などで困る層から出張買取依頼を獲得する</li>
-                      <li>お酒の価値が分からない人にも伝わるストーリー型の見せ方</li>
-                      <li>実績やお客様の声を多く出し、不安払拭に注力</li>
-                      <li>出張買取を特に安心感のあるサービスとして見せている</li>
-                    </ul>
-                  </article>
-                  <article class="split-panel__pane">
-                    <h3>サービス・ターゲット・示唆</h3>
-                    <ul class="mini-list">
-                      <li>Webフォーム・電話相談、出張・宅配・店頭買取</li>
-                      <li>買取実績金額を公開しつつ、処分の悩みに寄り添う</li>
-                      <li>価値が分からない大量のお酒に困る一般ユーザーが主対象</li>
-                      <li>ザオウリカーは `遺品整理` `生前整理` `まとめ売り` 文脈のLPで差別化余地がある</li>
-                    </ul>
-                  </article>
+
+                <div class="flow">
+                  <article class="flow-step"><h3>お酒買取</h3><p>総合入口</p></article>
+                  <article class="flow-step"><h3>酒種ページ</h3><p>ウイスキー / ワイン / 日本酒</p></article>
+                  <article class="flow-step"><h3>重点銘柄</h3><p>山崎 / 響 / 白州 / マッカラン</p></article>
+                </div>
+                <div class="flow">
+                  <article class="flow-step"><h3>検索意図LP</h3><p>古酒 / 大量買取 / 遺品整理</p></article>
+                  <article class="flow-step flow-step--accent"><h3>価格・相場</h3><p>比較と納得の入口</p></article>
+                  <article class="flow-step"><h3>実績 / FAQ</h3><p>証拠と不安解消</p></article>
                 </div>
               </div>
               <div class="slide__number">17</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-18" data-title="大黒屋分析">
+          <section class="slide" id="slide-18" data-title="ロードマップ">
             <div class="slide__frame">
-              <div class="side-pill">競合分析</div>
+              <div class="side-pill">Roadmap</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Competitive Analysis</p>
-                  <h2 class="title">大黒屋分析: <span class="accent">知名度・価格DB・即金性</span>が強い</h2>
+                  <p class="eyebrow">Implementation Roadmap</p>
+                  <h2 class="title">優先順位をつけて<span class="accent">段階的に実装</span>する</h2>
                 </div>
-                <div class="split-panel">
-                  <article class="split-panel__pane split-panel__pane--accent">
-                    <h3>サイトの目的・特徴</h3>
-                    <ul class="mini-list">
-                      <li>大黒屋ブランドを活かし、高級ワインや高額銘柄の指名売りを獲得する</li>
-                      <li>相場高騰の比較表で、資産価値としての売却動機を作っている</li>
-                      <li>フリーワード検索やカテゴリ絞り込みで価格を調べやすい</li>
-                      <li>全国店舗網による店頭即日現金化の強みが明確</li>
-                    </ul>
+
+                <div class="roadmap-grid">
+                  <article class="roadmap-card">
+                    <span class="phase">Phase 1 | 1〜2か月</span>
+                    <h3>4社比較とギャップ整理</h3>
+                    <p>法人・大ロット・高額案件の定義 / 営業起点を含むCV分類 / SEOギャップTOP20</p>
                   </article>
-                  <article class="split-panel__pane">
-                    <h3>サービス・ターゲット・示唆</h3>
-                    <ul class="mini-list">
-                      <li>LINE・メール・電話査定、宅配・店頭・出張買取</li>
-                      <li>銘柄別の参考買取価格データベースが充実</li>
-                      <li>高級ワインの価値を理解し、有名店で早く現金化したい層が主対象</li>
-                      <li>ザオウリカーは `価格透明性` と `持ち込み即査定` の見せ方を強化したい</li>
-                    </ul>
+                  <article class="roadmap-card">
+                    <span class="phase">Phase 2 | 2〜4か月</span>
+                    <h3>追加ページの実装</h3>
+                    <p>法人在庫処分 / ワインセラー一括買取 / 飲食店閉店整理 / 重点銘柄・相場ページ</p>
+                  </article>
+                  <article class="roadmap-card">
+                    <span class="phase">Phase 3 | 4〜6か月</span>
+                    <h3>独自資産の増幅</h3>
+                    <p>ワインセラー・空き瓶 / 中国酒 / 専門査定データ / FAQ / AIO向け構造化</p>
                   </article>
                 </div>
               </div>
@@ -718,143 +1095,129 @@
             </div>
           </section>
 
-          <section class="slide" id="slide-19" data-title="4サイト比較">
+          <section class="slide" id="slide-19" data-title="ページ制作数目安">
             <div class="slide__frame">
-              <div class="side-pill">競合分析</div>
+              <div class="side-pill">Scale</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Positioning Map</p>
-                  <h2 class="title">4サイトのポジショニング比較: <span class="accent">売却動機ごとに勝ち方が違う</span></h2>
+                  <p class="eyebrow">Page Planning</p>
+                  <h2 class="title">初期<span class="accent">70ページ</span>を公開し、成果が出た銘柄だけを拡張する</h2>
                 </div>
-                <div class="positioning-map">
-                  <div class="positioning-map__axis positioning-map__axis--horizontal"></div>
-                  <div class="positioning-map__axis positioning-map__axis--vertical"></div>
-                  <p class="positioning-map__label positioning-map__label--top">比較検討・専門性重視</p>
-                  <p class="positioning-map__label positioning-map__label--bottom">安心・処分性重視</p>
-                  <p class="positioning-map__label positioning-map__label--left">整理・手軽さ重視</p>
-                  <p class="positioning-map__label positioning-map__label--right">価格・資産価値重視</p>
 
-                  <article class="map-node map-node--five-needs">
-                    <h3>Five Needs</h3>
-                    <p>高額査定・独自販路で `価格重視層` に強い</p>
-                  </article>
-                  <article class="map-node map-node--joylab">
-                    <h3>JOYLAB</h3>
-                    <p>`手軽さ・透明性` と安心感で間口を広げる</p>
-                  </article>
-                  <article class="map-node map-node--fukuchan">
-                    <h3>福ちゃん</h3>
-                    <p>`整理・処分目的` に寄り添う訴求が中心</p>
-                  </article>
-                  <article class="map-node map-node--daikokuya">
-                    <h3>大黒屋</h3>
-                    <p>`高級銘柄` と `即金性` を両立する有名店</p>
-                  </article>
+                <div class="comparison-table">
+                  <div class="comparison-row comparison-row--head"><span>ページ群</span><span>初期本数</span><span>スライド34との連動</span><span>役割</span></div>
+                  <div class="comparison-row"><span>酒種カテゴリ</span><span>8</span><span>コラムのハブ</span><span>酒種別の検索入口</span></div>
+                  <div class="comparison-row"><span>買取・地域・BtoB LP</span><span>6</span><span>LINE / 大阪店頭 / 法人・ワインセラー</span><span>査定への最短導線</span></div>
+                  <div class="comparison-row"><span>重点銘柄・価格ページ</span><span>10</span><span>山崎・響・マッカラン・高額ワイン</span><span>実測クエリの受け皿</span></div>
+                  <div class="comparison-row"><span>コラム・FAQ</span><span>46</span><span>記事36本 + FAQ10本</span><span>情報収集から査定へ接続</span></div>
                 </div>
+
                 <p class="callout">
-                  ザオウリカーの勝ち筋は、全方位競争ではなく、
-                  `大阪持ち込み` `LINE査定` `高級ワイン` `ワインセラー` `まとめ売り`
-                  を軸に、各社の強みを自社向けに再構成することです。
+                  初期合計は`70ページ`。既存の買取実績は新規量産せず、銘柄・価格・コラムから内部リンクして再利用する。公開後は`案件単価` `検索需要` `商談数`で評価し、成果が出た銘柄を追加して`100〜130ページ`へ拡張する。
                 </p>
               </div>
               <div class="slide__number">19</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-20" data-title="第4章 施策提案">
+          <section class="slide" id="slide-20" data-title="施策優先順位">
             <div class="slide__frame">
-              <div class="chapter-intro">
-                <p class="chapter-intro__meta">Chapter 04</p>
-                <h2 class="chapter-intro__title">施策提案</h2>
-                <p class="chapter-intro__lead">
-                  最後に、ニーズ分析・自社分析・競合分析を踏まえ、
-                  短期で成果につながる施策と実行順序を提案します。
-                </p>
+              <div class="side-pill">Priority</div>
+              <div class="slide__main">
+                <div class="slide__header">
+                  <p class="eyebrow">Priority Matrix</p>
+                  <h2 class="title">最初に整えるべきは、<span class="accent">BtoB高額案件の受け皿</span></h2>
+                </div>
+
+                <div class="action-grid">
+                  <article class="action-card">
+                    <span class="tag">S</span>
+                    <h3>法人・大ロット買取LP</h3>
+                    <p>法人在庫処分、飲食店閉店、酒販店・ワインセラーを対象に、相談条件と実績を明示。</p>
+                  </article>
+                  <article class="action-card">
+                    <span class="tag">A</span>
+                    <h3>高額銘柄・高級ワインページ</h3>
+                    <p>山崎・響・白州・マッカラン、高級ワインを、法人相談にも使える実績・査定根拠付きで整備。</p>
+                  </article>
+                  <article class="action-card">
+                    <span class="tag">A</span>
+                    <h3>営業連携・計測設計</h3>
+                    <p>法人 / 個人、営業起点 / 検索起点、案件単価・ロットをCRMで共通管理する。</p>
+                  </article>
+                  <article class="action-card">
+                    <span class="tag">B</span>
+                    <h3>専門コラム / FAQ / AIO向けQ&A</h3>
+                    <p>専門性とAI引用候補としての情報整備を中長期で進める。</p>
+                  </article>
+                </div>
               </div>
               <div class="slide__number">20</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-21" data-title="優先施策">
+          <section class="slide" id="slide-21" data-title="SEOからAIOへ">
             <div class="slide__frame">
-              <div class="side-pill">施策</div>
+              <div class="side-pill">AIO</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Priority Actions</p>
-                  <h2 class="title">提案: 短期で着手すべきは、<span class="accent">この4施策</span></h2>
+                  <p class="eyebrow">SEO to AIO</p>
+                  <h2 class="title">SEOで蓄積した一次情報を、<span class="accent">AIが回答に使えるデータ</span>へ変える</h2>
                 </div>
-                <div class="action-grid">
-                  <article class="action-card">
-                    <span class="tag">01</span>
-                    <h3>GA4の問い合わせ計測を再設計</h3>
-                    <p>form_submit、LINEクリック、電話クリックを正式CVとして定義します。</p>
+
+                <div class="split-panel">
+                  <article class="split-panel__pane">
+                    <h3>Google検索</h3>
+                    <ul class="mini-list">
+                      <li>`山崎 買取`</li>
+                      <li>`ウイスキー 買取相場`</li>
+                      <li>`法人 在庫処分 酒 買取`</li>
+                      <li>ページ・内部リンク・検索意図を最適化</li>
+                    </ul>
                   </article>
-                  <article class="action-card">
-                    <span class="tag">02</span>
-                    <h3>大阪・店頭持ち込み買取LP</h3>
-                    <p>アクセス、駐車場、査定時間、予約可否、即日性を整理します。</p>
-                  </article>
-                  <article class="action-card">
-                    <span class="tag">03</span>
-                    <h3>高級ワイン・ワインセラー一括買取LP</h3>
-                    <p>高額売却、まとめ売り、コレクション整理の受け皿を作ります。</p>
-                  </article>
-                  <article class="action-card">
-                    <span class="tag">04</span>
-                    <h3>法人・飲食店・酒販店向け大量買取LP</h3>
-                    <p>大ロット案件を取りにいくための専用訴求を用意します。</p>
+                  <article class="split-panel__pane split-panel__pane--accent">
+                    <h3>AI検索</h3>
+                    <ul class="mini-list">
+                      <li>`山崎を高く買い取る専門店は？`</li>
+                      <li>`古いウイスキーの価値は？`</li>
+                      <li>`飲食店閉店でワイン在庫をまとめて売りたい`</li>
+                      <li>実績 + 専門家 + 価格 + 独自データ + Q&A が必要</li>
+                      <li>Organization / FAQPage等の構造化データと、冒頭で答える文章設計を追加</li>
+                    </ul>
                   </article>
                 </div>
+
+                <p class="callout">
+                  AIO対策の本質は、`SEOで作った一次情報を対話・文脈で使える回答データへ変換すること` です。添付のJOYLABツール診断でも、構造化データ・直接回答形式・サイテーションが改善観点として示されています。
+                </p>
               </div>
               <div class="slide__number">21</div>
             </div>
           </section>
 
-          <section class="slide" id="slide-22" data-title="実行計画">
+          <section class="slide" id="slide-22" data-title="まとめ">
             <div class="slide__frame">
-              <div class="side-pill">実行計画</div>
+              <div class="side-pill">Conclusion</div>
               <div class="slide__main">
                 <div class="slide__header">
-                  <p class="eyebrow">Roadmap</p>
-                  <h2 class="title">実行計画: 90日で、<span class="accent">見える化 → 受け皿整備 → 比較勝ち</span>へ進める</h2>
+                  <p class="eyebrow">Final Conclusion</p>
+                  <h2 class="title">提案方針: SEOは<span class="accent">量産</span>ではなく<span class="accent">再構造化</span></h2>
                 </div>
 
-                <div class="roadmap-grid">
-                  <article class="roadmap-card">
-                    <span class="phase">0〜30日</span>
-                    <h3>計測と基礎整備</h3>
-                    <p>GA4のCV定義見直し、GBP改善、優先LPの要件定義、既存査定ページの導線点検を実施。</p>
-                  </article>
-                  <article class="roadmap-card">
-                    <span class="phase">31〜60日</span>
-                    <h3>高利益テーマの受け皿制作</h3>
-                    <p>大阪持ち込みLP、高級ワインLP、ワインセラーLP、法人向けLPを順次公開。</p>
-                  </article>
-                  <article class="roadmap-card">
-                    <span class="phase">61〜90日</span>
-                    <h3>比較勝ちとAI露出の強化</h3>
-                    <p>事例、比較コンテンツ、口コミ活用、LINE追客設計を進め、LLMO向け情報を強化。</p>
-                  </article>
+                <div class="flow">
+                  <article class="flow-step"><h3>① 酒種ページ</h3><p>基盤</p></article>
+                  <article class="flow-step"><h3>② 銘柄ページ</h3><p>検索入口</p></article>
+                  <article class="flow-step"><h3>③ 価格・相場</h3><p>比較と納得</p></article>
+                </div>
+                <div class="flow">
+                  <article class="flow-step"><h3>④ 買取実績</h3><p>一次情報の証拠</p></article>
+                  <article class="flow-step"><h3>⑤ 専門家解説</h3><p>信頼とAIO対応</p></article>
+                  <article class="flow-step flow-step--accent"><h3>→ LINE査定</h3><p>CVへ接続</p></article>
                 </div>
 
-                <div class="footer-grid">
-                  <article class="footer-card">
-                    <h3>追加で整えたいデータ</h3>
-                    <ul>
-                      <li>Search Consoleのページ別・日付別データ</li>
-                      <li>GBPのUTM設定</li>
-                      <li>問い合わせ後の成約・売上データ</li>
-                      <li>LINE登録後の行動データ</li>
-                    </ul>
-                  </article>
-                  <article class="footer-card">
-                    <h3>最終メッセージ</h3>
-                    <p>
-                      本件は「SEO改善」単体ではなく、
-                      高単価案件を取りにいくための集客再設計として進めるのが最も価値が高い提案になります。
-                    </p>
-                  </article>
-                </div>
+                <p class="callout">
+                  `法人・大ロット・高額酒を、専門査定と自社オークションで安心して任せられる` という固有価値を、検索エンジンとAIの両方が理解できる構造へ変えることが最初の一手です。
+                </p>
               </div>
               <div class="slide__number">22</div>
             </div>

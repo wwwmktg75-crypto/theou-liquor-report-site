@@ -1,14 +1,60 @@
 const slides = Array.from(document.querySelectorAll(".slide"));
 const tocLinks = Array.from(document.querySelectorAll(".toc__link"));
 const counter = document.querySelector("#slide-counter");
+const previousButton = document.querySelector('[data-action="previous"]');
+const nextButton = document.querySelector('[data-action="next"]');
+const accessGateForm = document.querySelector("#access-gate-form");
+const accessPasswordInput = document.querySelector("#access-password");
+const accessGateError = document.querySelector("#access-gate-error");
+const accessStorageKey = "zaou-liquor-report-access";
+let activeSlideIndex = 0;
+
+function unlockReport() {
+  document.body.classList.remove("is-locked");
+}
+
+if (window.sessionStorage.getItem(accessStorageKey) === "granted") {
+  unlockReport();
+}
+
+accessGateForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (accessPasswordInput?.value === "zaou") {
+    window.sessionStorage.setItem(accessStorageKey, "granted");
+    unlockReport();
+    return;
+  }
+
+  accessGateError.hidden = false;
+  accessPasswordInput?.focus();
+});
+
+slides.forEach((slide, index) => {
+  const slideNumber = slide.querySelector(".slide__number");
+  if (slideNumber) {
+    slideNumber.textContent = String(index + 1);
+  }
+});
 
 function updateActiveSlide(index) {
-  tocLinks.forEach((link, linkIndex) => {
-    link.classList.toggle("is-active", linkIndex === index);
+  activeSlideIndex = index;
+  const activeSlide = slides[index];
+
+  tocLinks.forEach((link) => {
+    link.classList.toggle("is-active", link.getAttribute("href") === `#${activeSlide?.id}`);
   });
 
   if (counter) {
     counter.textContent = `${index + 1} / ${slides.length}`;
+  }
+
+  if (previousButton) {
+    previousButton.disabled = index === 0;
+  }
+
+  if (nextButton) {
+    nextButton.disabled = index === slides.length - 1;
   }
 }
 
@@ -45,6 +91,12 @@ document.addEventListener("click", (event) => {
   if (!button) return;
 
   switch (button.dataset.action) {
+    case "previous":
+      goToSlide(activeSlideIndex - 1);
+      break;
+    case "next":
+      goToSlide(activeSlideIndex + 1);
+      break;
     case "print":
       window.print();
       break;
@@ -54,16 +106,16 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  const currentIndex = tocLinks.findIndex((link) => link.classList.contains("is-active"));
+  if (document.body.classList.contains("is-locked")) return;
 
   if (event.key === "ArrowRight" || event.key === "ArrowDown" || event.key === "PageDown") {
     event.preventDefault();
-    goToSlide(currentIndex + 1);
+    goToSlide(activeSlideIndex + 1);
   }
 
   if (event.key === "ArrowLeft" || event.key === "ArrowUp" || event.key === "PageUp") {
     event.preventDefault();
-    goToSlide(currentIndex - 1);
+    goToSlide(activeSlideIndex - 1);
   }
 
   if (event.key === "Home") {
