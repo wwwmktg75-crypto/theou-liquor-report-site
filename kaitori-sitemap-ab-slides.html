@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>蔵王リカー 買取サイトマップ 現状・A案・B案</title>
+    <style>
+      :root {
+        --ink: #172033;
+        --muted: #5f6b7a;
+        --line: #cfd7e3;
+        --bg: #f5f7fa;
+        --panel: #ffffff;
+        --blue: #4577d8;
+        --blue-soft: #eaf2ff;
+        --orange: #dd8128;
+        --orange-soft: #fff1e3;
+        --green: #39945a;
+        --green-soft: #eef9f2;
+        --slate-soft: #eef2f7;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP",
+          "Hiragino Sans", "Yu Gothic", sans-serif;
+      }
+
+      body.is-locked {
+        overflow: hidden;
+      }
+
+      body.is-locked .deck {
+        display: none;
+      }
+
+      .access-gate {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: rgba(245, 247, 250, 0.96);
+      }
+
+      body:not(.is-locked) .access-gate {
+        display: none;
+      }
+
+      .access-gate__panel {
+        width: min(440px, 100%);
+        padding: 32px;
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: 0 16px 46px rgba(23, 32, 51, 0.12);
+      }
+
+      .access-gate__panel h1 {
+        font-size: 30px;
+      }
+
+      .access-gate__panel p {
+        margin-top: 12px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .access-gate__panel label {
+        display: block;
+        margin-top: 20px;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .access-gate__panel input {
+        width: 100%;
+        margin-top: 8px;
+        padding: 13px 14px;
+        border: 1px solid var(--line);
+        font: inherit;
+      }
+
+      .access-gate__panel button {
+        width: 100%;
+        margin-top: 18px;
+        padding: 13px 16px;
+        border: 0;
+        background: var(--ink);
+        color: #fff;
+        font: inherit;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .access-gate__error {
+        color: #b42318 !important;
+        font-weight: 800;
+      }
+
+      .deck {
+        display: grid;
+        gap: 28px;
+        padding: 28px;
+      }
+
+      .slide {
+        width: min(1280px, 100%);
+        min-height: 720px;
+        margin: 0 auto;
+        padding: 42px 48px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        box-shadow: 0 16px 46px rgba(23, 32, 51, 0.08);
+        overflow: hidden;
+        page-break-after: always;
+      }
+
+      .slide--title {
+        display: grid;
+        align-content: center;
+        min-height: 720px;
+        background: linear-gradient(135deg, #ffffff 0%, #f4f7fb 100%);
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--blue);
+        font-size: 16px;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 980px;
+        font-size: 52px;
+        line-height: 1.18;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        font-size: 34px;
+        line-height: 1.25;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 980px;
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 21px;
+        line-height: 1.75;
+      }
+
+      .slide-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 30px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        flex: 0 0 auto;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 24px;
+        font-weight: 900;
+      }
+
+      .badge--current {
+        background: #293244;
+      }
+
+      .badge--a {
+        background: var(--blue);
+      }
+
+      .badge--b {
+        background: var(--orange);
+      }
+
+      .head-left {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .metric {
+        min-height: 92px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        background: #fbfcfe;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 28px;
+        line-height: 1.1;
+      }
+
+      .metric span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .tree {
+        display: grid;
+        gap: 18px;
+      }
+
+      .root {
+        width: fit-content;
+        margin: 0 auto;
+        padding: 16px 28px;
+        border-radius: 10px;
+        background: var(--ink);
+        color: #fff;
+        font-size: 22px;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .branches {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        padding-top: 26px;
+      }
+
+      .branches::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 12%;
+        right: 12%;
+        height: 2px;
+        background: var(--line);
+      }
+
+      .branch {
+        position: relative;
+        min-height: 116px;
+        padding: 16px;
+        border: 2px solid var(--line);
+        background: #fff;
+      }
+
+      .branch::before {
+        content: "";
+        position: absolute;
+        top: -27px;
+        left: 50%;
+        width: 2px;
+        height: 25px;
+        background: var(--line);
+      }
+
+      .branch h3 {
+        font-size: 19px;
+        line-height: 1.3;
+      }
+
+      .branch p {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .branch ul {
+        margin: 10px 0 0;
+        padding-left: 17px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .branch--blue {
+        border-color: var(--blue);
+        background: var(--blue-soft);
+      }
+
+      .branch--orange {
+        border-color: var(--orange);
+        background: var(--orange-soft);
+      }
+
+      .branch--green {
+        border-color: var(--green);
+        background: var(--green-soft);
+      }
+
+      .branch--muted {
+        background: var(--slate-soft);
+      }
+
+      .wide-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 22px;
+        align-items: start;
+      }
+
+      .note {
+        padding: 18px 20px;
+        border-left: 5px solid var(--blue);
+        background: #f8fbff;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .note--orange {
+        border-left-color: var(--orange);
+        background: #fff8f0;
+      }
+
+      .mini-list {
+        display: grid;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .mini-list div {
+        display: grid;
+        grid-template-columns: 148px 1fr;
+        gap: 14px;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        background: #fff;
+      }
+
+      .mini-list strong {
+        font-size: 14px;
+      }
+
+      .mini-list span {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .flow div {
+        min-height: 82px;
+        padding: 14px;
+        border: 2px solid var(--line);
+        background: #fff;
+        text-align: center;
+      }
+
+      .flow strong {
+        display: block;
+        font-size: 15px;
+      }
+
+      .flow span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .sheet-ref {
+        margin-top: 22px;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .sheet-ref a {
+        color: var(--ink);
+        overflow-wrap: anywhere;
+      }
+
+      .sheet-ref strong {
+        color: var(--ink);
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .deck {
+          padding: 0;
+          gap: 0;
+        }
+
+        .slide {
+          width: 100vw;
+          min-height: 100vh;
+          border: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="is-locked">
+    <section class="access-gate" id="access-gate" aria-labelledby="access-gate-title">
+      <form class="access-gate__panel" id="access-gate-form">
+        <p class="eyebrow">Client Report</p>
+        <h1 id="access-gate-title">閲覧パスワード</h1>
+        <p>本資料は関係者向けです。パスワードを入力して閲覧してください。</p>
+        <label for="access-password">パスワード</label>
+        <input id="access-password" name="password" type="password" autocomplete="current-password" required autofocus />
+        <p class="access-gate__error" id="access-gate-error" role="alert" hidden>パスワードが正しくありません。</p>
+        <button type="submit">資料を開く</button>
+      </form>
+    </section>
+    <main class="deck">
+      <section class="slide slide--title">
+        <p class="eyebrow">THEOU Liquor / SEO・AI対応サイト設計</p>
+        <h1>買取ディレクトリの現状マップと改善案 A/B</h1>
+        <p class="lead">
+          現状の “/kaitori/” 配下を整理し、標準バランス型のA案と、
+          ワイン買取に重きを置くB案を分けて比較します。
+        </p>
+        <p class="sheet-ref">
+          詳細:
+          <a href="https://docs.google.com/spreadsheets/d/1IKIB_kCo4nkTOIl42weKsJCE2horNgr84wN6kvMedNA/edit?usp=sharing">
+            https://docs.google.com/spreadsheets/d/1IKIB_kCo4nkTOIl42weKsJCE2horNgr84wN6kvMedNA/edit?usp=sharing
+          </a><br />
+          シート名: <strong>現URL</strong> / <strong>現kaitori</strong> /
+          <strong>A案</strong> / <strong>B案（ワイン中心）</strong>
+        </p>
+      </section>
+
+      <section class="slide">
+        <div class="slide-head">
+          <div class="head-left">
+            <div class="badge badge--current">現</div>
+            <div>
+              <p class="eyebrow">Current Sitemap</p>
+              <h2>現状: “/kaitori/” 配下は実績中心で、検索意図別LPが不足</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary">
+          <div class="metric">
+            <strong>115</strong>
+            <span>200 OKの買取配下URL</span>
+          </div>
+          <div class="metric">
+            <strong>76</strong>
+            <span>買取実績詳細ページ</span>
+          </div>
+          <div class="metric">
+            <strong>11</strong>
+            <span>買取実績カテゴリ</span>
+          </div>
+          <div class="metric">
+            <strong>9</strong>
+            <span>買取側コラム記事</span>
+          </div>
+        </div>
+
+        <div class="tree">
+          <div class="root">/kaitori/ お酒専門買取店ザオウリカー</div>
+          <div class="branches">
+            <div class="branch branch--muted">
+              <h3>基本ページ</h3>
+              <p>査定・問い合わせ・FAQ・流れ・LINE査定・お客様の声</p>
+              <ul>
+                <li>/contact2</li>
+                <li>/contact3</li>
+                <li>/faq2</li>
+                <li>/flow2</li>
+                <li>/linesatei</li>
+              </ul>
+            </div>
+            <div class="branch branch--muted">
+              <h3>コラム</h3>
+              <p>情報収集記事はあるが、査定LPへの接続が弱い。</p>
+              <ul>
+                <li>賞味期限</li>
+                <li>オーパスワン</li>
+                <li>終売ウイスキー</li>
+                <li>森伊蔵</li>
+              </ul>
+            </div>
+            <div class="branch branch--green">
+              <h3>買取実績</h3>
+              <p>既存資産は豊富。SEO/AIOの一次情報として再配置できる。</p>
+              <ul>
+                <li>山崎・響・白州</li>
+                <li>マッカラン</li>
+                <li>高級ワイン</li>
+                <li>ブランデー</li>
+              </ul>
+            </div>
+            <div class="branch branch--muted">
+              <h3>実績カテゴリ</h3>
+              <p>酒種カテゴリはあるが、検索意図別の固定LPになっていない。</p>
+              <ul>
+                <li>whisky / wine</li>
+                <li>winecellar_emptybottle</li>
+                <li>brandy / sake / shochu</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="note" style="margin-top: 28px">
+          課題はページ数不足そのものではなく、検索意図ごとの受け皿不足です。
+          実績ページに山崎・響・ワインなどの情報は点在しているため、
+          改善案では「銘柄LP」「価格・相場」「ワインセラー」「法人買取」へ再構造化します。
+        </div>
+        <p class="sheet-ref">
+          詳細:
+          <a href="https://docs.google.com/spreadsheets/d/1IKIB_kCo4nkTOIl42weKsJCE2horNgr84wN6kvMedNA/edit?usp=sharing">
+            https://docs.google.com/spreadsheets/d/1IKIB_kCo4nkTOIl42weKsJCE2horNgr84wN6kvMedNA/edit?usp=sharing
+          </a><br />
+          シート名: <strong>現URL</strong> / <strong>現kaitori</strong>
+        </p>
+      </section>
+
+      <section class="slide">
+        <div class="slide-head">
+          <div class="head-left">
+            <div class="badge badge--a">A</div>
+            <div>
+              <p class="eyebrow">Plan A / Balanced</p>
+              <h2>A案: 買取全体をバランスよく強化する標準プラン</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="wide-grid">
+          <div>
+            <div class="tree">
+              <div class="root">/kaitori/ お酒買取総合</div>
+              <div class="branches">
+                <div class="branch branch--blue">
+                  <h3>査定・地域</h3>
+                  <p>LINE査定、大阪店頭、宅配、出張を整理。</p>
+                  <ul>
+                    <li>/line/</li>
+                    <li>/store/osaka/</li>
+                    <li>/delivery/</li>
+                    <li>/visit/</li>
+                  </ul>
+                </div>
+                <div class="branch branch--blue">
+                  <h3>価格・相場</h3>
+                  <p>比較検討に効く価格表を作る。</p>
+                  <ul>
+                    <li>/price/</li>
+                    <li>/price/whisky/</li>
+                    <li>/price/wine/</li>
+                  </ul>
+                </div>
+                <div class="branch branch--blue">
+                  <h3>高額ウイスキー</h3>
+                  <p>実測キーワードと既存実績を受ける。</p>
+                  <ul>
+                    <li>山崎 / 響 / 白州</li>
+                    <li>マッカラン</li>
+                    <li>終売ウイスキー</li>
+                  </ul>
+                </div>
+                <div class="branch branch--blue">
+                  <h3>ワイン・法人</h3>
+                  <p>高級ワイン、ワインセラー、法人買取も並行。</p>
+                  <ul>
+                    <li>/wine/premium/</li>
+                    <li>/wine/wine-cellar/</li>
+                    <li>/corporate/</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="flow">
+              <div>
+                <strong>入口</strong>
+                <span>買取総合</span>
+              </div>
+              <div>
+                <strong>比較</strong>
+                <span>価格・相場</span>
+              </div>
+              <div>
+                <strong>専門性</strong>
+                <span>酒種・銘柄LP</span>
+              </div>
+              <div>
+                <strong>証拠</strong>
+                <span>買取実績</span>
+              </div>
+              <div>
+                <strong>CV</strong>
+                <span>LINE/電話/フォーム</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="note">
+              A案は、お酒買取全体のSEO基盤を広く整える構成です。
+              山崎・響・白州・マッカランなど高額ウイスキーも早期に狙いながら、
+              ワイン・法人買取も同時に育てます。
+            </div>
+            <div class="mini-list">
+              <div>
+                <strong>初期規模</strong>
+                <span>64ページ想定。網羅性は高いが制作負荷も大きい。</span>
+              </div>
+              <div>
+                <strong>強み</strong>
+                <span>検索入口を広く作れる。指名・一般・銘柄・価格に対応しやすい。</span>
+              </div>
+              <div>
+                <strong>注意点</strong>
+                <span>ワイン特化の印象はB案より弱い。優先順位管理が必要。</span>
+              </div>
+              <div>
+                <strong>向く状況</strong>
+                <span>買取SEO全体を一気に整えたい場合。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="sheet-ref">
+          詳細:
+          <a href="https://docs.google.com/spreadsheets/d/1IKIB_kCo4nkTOIl42weKsJCE2horNgr84wN6kvMedNA/edit?usp=sharing">
+            https://docs.google.com/spreadsheets/d/1IKIB_kCo4nkTOIl42weKsJCE2horNgr84wN6kvMedNA/edit?usp=sharing
+          </a><br />
+          シート名: <strong>A案</strong>
+        </p>
+
+      </section>
+
+      <section class="slide">
+        <div class="slide-head">
+          <div class="head-left">
+            <div class="badge badge--b">B</div>
+            <div>
+              <p class="eyebrow">Plan B / Wine Focus</p>
+              <h2>B案: ワイン買取・高級ワイン・ワインセラーを先行するプラン</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="wide-grid">
+          <div>
+            <div class="tree">
+              <div class="root">/kaitori/ 買取総合ハブ</div>
+              <div class="branches">
+                <div class="branch branch--orange">
+                  <h3>ワイン買取</h3>
+                  <p>B案の最重要ハブ。高級ワイン・銘柄LPへ分岐。</p>
+                  <ul>
+                    <li>/wine/</li>
+                    <li>/wine/premium/</li>
+                    <li>/wine/romanee-conti/</li>
+                  </ul>
+                </div>
+                <div class="branch branch--orange">
+                  <h3>ワインセラー</h3>
+                  <p>個人のセラー整理と一括査定を受ける。</p>
+                  <ul>
+                    <li>/wine/wine-cellar/</li>
+                    <li>保管状態</li>
+                    <li>複数本査定</li>
+                  </ul>
+                </div>
+                <div class="branch branch--orange">
+                  <h3>法人ワイン</h3>
+                  <p>店舗・法人在庫・閉店整理を営業にも使えるLPへ。</p>
+                  <ul>
+                    <li>/corporate/wine-cellar/</li>
+                    <li>/corporate/inventory/</li>
+                    <li>/corporate/restaurant-closing/</li>
+                  </ul>
+                </div>
+                <div class="branch branch--muted">
+                  <h3>ウイスキー</h3>
+                  <p>重要ページは残し、2次公開に回す。</p>
+                  <ul>
+                    <li>山崎55年</li>
+                    <li>響30年</li>
+                    <li>マッカラン</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="flow">
+              <div>
+                <strong>入口</strong>
+                <span>ワイン買取</span>
+              </div>
+              <div>
+                <strong>高単価</strong>
+                <span>高級ワイン</span>
+              </div>
+              <div>
+                <strong>まとめ売り</strong>
+                <span>ワインセラー</span>
+              </div>
+              <div>
+                <strong>法人</strong>
+                <span>在庫・閉店整理</span>
+              </div>
+              <div>
+                <strong>CV</strong>
+                <span>電話/フォーム/LINE</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="note note--orange">
+              B案は、高単価案件の中でもワイン買取に集中する構成です。
+              高級ワイン、ワインセラー、法人ワイン在庫を先に厚くするため、
+              営業戦略との接続が強く、初期提案として絞りやすいです。
+            </div>
+            <div class="mini-list">
+              <div>
+                <strong>初期規模</strong>
+                <span>40ページ想定。A案より絞れて実行しやすい。</span>
+              </div>
+              <div>
+                <strong>強み</strong>
+                <span>ワイン専門性と高単価案件の訴求が明確。</span>
+              </div>
+              <div>
+                <strong>注意点</strong>
+                <span>高額ウイスキーSEOは2次公開扱いになり、短期の網羅性は落ちる。</span>
+              </div>
+              <div>
+                <strong>推奨</strong>
+                <span>B案でワインを先行し、A案の高額ウイスキー重要ページを後続で追加。</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="sheet-ref">
+          詳細:
+          <a href="https://docs.google.com/spreadsheets/d/1IKIB_kCo4nkTOIl42weKsJCE2horNgr84wN6kvMedNA/edit?usp=sharing">
+            https://docs.google.com/spreadsheets/d/1IKIB_kCo4nkTOIl42weKsJCE2horNgr84wN6kvMedNA/edit?usp=sharing
+          </a><br />
+          シート名: <strong>B案（ワイン中心）</strong>
+        </p>
+
+      </section>
+
+      <section class="slide">
+        <div class="slide-head">
+          <div>
+            <p class="eyebrow">Recommended Direction</p>
+            <h2>推奨: B案でワイン買取を先行し、A案の重要ページを段階追加</h2>
+          </div>
+        </div>
+
+        <div class="summary">
+          <div class="metric">
+            <strong>STEP1</strong>
+            <span>ワイン買取・高級ワイン・ワインセラーを先に公開</span>
+          </div>
+          <div class="metric">
+            <strong>STEP2</strong>
+            <span>法人ワイン在庫・閉店整理を営業資料にも使う</span>
+          </div>
+          <div class="metric">
+            <strong>STEP3</strong>
+            <span>価格・実績・FAQでAI検索にも引用されやすくする</span>
+          </div>
+          <div class="metric">
+            <strong>STEP4</strong>
+            <span>山崎・響・終売ウイスキーを2次公開で追加</span>
+          </div>
+        </div>
+
+        <div class="wide-grid">
+          <div class="note note--orange">
+            今回はワイン買取を中心に優先して注力していきたいということですので、
+            高級ワイン、ワインセラー、まとめ売り、法人/大ロット案件を先に強化するB案を軸に進めるのがよいと考えています。
+          </div>
+          <div class="note">
+            一方で、Search Consoleでは山崎55年、響30年、LINE査定などの実測キーワードも見えています。
+            B案で先行しながら、A案の重要ページを後続追加する進め方が現実的です。
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const accessStorageKey = "zaou-liquor-report-access";
+      const accessGateForm = document.querySelector("#access-gate-form");
+      const accessPasswordInput = document.querySelector("#access-password");
+      const accessGateError = document.querySelector("#access-gate-error");
+
+      function unlockReport() {
+        document.body.classList.remove("is-locked");
+      }
+
+      if (window.sessionStorage.getItem(accessStorageKey) === "granted") {
+        unlockReport();
+      }
+
+      accessGateForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (accessPasswordInput?.value === "zaou") {
+          window.sessionStorage.setItem(accessStorageKey, "granted");
+          unlockReport();
+          return;
+        }
+
+        accessGateError.hidden = false;
+        accessPasswordInput?.focus();
+      });
+    </script>
+  </body>
+</html>
